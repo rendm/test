@@ -1,0 +1,110 @@
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+.gray-bg{
+    position: relative;
+}
+/* 放大镜span */
+.packaging-fangdajing{
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    /* width: 30px; */
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    width: 60px;
+    background: #1c84c6;
+    border-radius: 4px;
+    color: #fff;
+    margin-left:10px;
+}
+/* 包在input  和  icon外面的div */
+.packaging-exhibition{
+    width: 100%;
+    height: auto;;
+    display: flex;
+    background: #fff;
+}
+/* 弹层 */
+.packaging-shadewe{
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,.3);
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    z-index: 99999;
+}
+/*.packaging-conceal input{*/
+    /*margin: 10px 10px 10px 0;*/
+    /*border-radius: 3px;*/
+    /*border: 1px solid #ccc;*/
+    /*height: 30px;*/
+    /*padding-left:10px;*/
+    /*outline: none;*/
+/*}*/
+
+
+
+.packagin-result{
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border:1px solid #ccc;
+    outline: none;
+}
+.packagin-result2{
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border:1px solid #ccc;
+    outline: none;
+}
+.packaging-wraap{
+    height: auto;
+}
+/* 隐藏起来的大盒子 */
+.packaging-conceal{
+    z-index: 111;
+    background: #fff;
+    padding:30px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 100px;
+}
+/* 查询btn */
+.inquirebtn{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: #1c84c6;
+    border: 1px solid #1c84c6;
+    color:#fff;
+    border-radius:3px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+tr{
+    cursor: pointer;
+}
+.packaging-headback{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* 小叉叉 */
+.icon-ziyuanldpi{
+    font-size: 10px;
+    cursor: pointer;
+}
+.delelement{
+
+}

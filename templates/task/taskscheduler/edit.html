@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+    <link href="../../../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/task/taskscheduler/edit.css">
+</head>
+<body class="gray-bg" >
+    <div class="layui-card layui-fluid" style="margin: 20px;">
+        <div style="width: 80%; position: relative; padding-top: 40px">
+            <form class="gg-form" role="form" id="basicInfoForm">
+                        <div class="layui-row ">
+                            <div class="layui-form-item ">
+                                <label class="layui-form-label">作业名称:</label>
+                                <div class="layui-input-block layui-col-md6">
+                                    <input type="text" class="layui-input " id="jobName" name="jobName"  placeholder="作业名称" />
+                                </div>
+                             </div>
+                            <div class="layui-form-item ">
+                                <label class="layui-form-label">作业序列名称 :</label>
+                                <div class="layui-input-block layui-col-md6">
+                                    <input type="text" class="layui-input  " id="taskSerialName" name="taskSerialName"   placeholder="作业序列名称"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item ">
+                                <label class="layui-form-label">机器人名称：</label>
+                                <div class="layui-input-block layui-col-md6">
+                                    <input type="text" class="layui-input " id="robotname" name="robotname"   placeholder="机器人名称" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item ">
+                                <label class="layui-form-label">机器人硬件地址:</label>
+                                <div class="layui-input-block layui-col-md6">
+                                    <input type="text" class="layui-input  " id="robothardwareno" name="robothardwareno"  placeholder="机器人硬件地址" />
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item ">
+                                <label class="layui-form-label">定时配置 :</label>
+                                <div class="layui-input-block layui-col-md6">
+                                    <input type="text" class="layui-input  " id="jobCron" name="jobCron" placeholder="定时配置"   />
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item  ">
+                                <label class="layui-form-label">状态：</label>
+                                <div class="layui-input-block col-sm-6">
+                                    <label class="radio-inline"><input id="delFlag1" name="jobStatus" class="form-control1" type="radio" value="1" >停止</label>
+                                    <label class="radio-inline"><input id="delFlag2" name="jobStatus" class="form-control1" type="radio" value="0" > 运行中</label>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                  
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn layui-btn-normal" id="base_save">保存</button>
+                            <button type="button" class="layui-btn layui-btn-primary" id="cancel">取消</button>
+                            <!-- #btndel #btndel-->
+                        </div>
+                    </div>
+
+    </div>
+    <script src="../../../static/js/share.js"></script>
+    <script src="../../../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../static/js/layui.js"></script>
+    <script src="../../../static/js/plugins/validate/jquery.validate.min.js" ></script>
+    <script src="../../../static/js/plugins/distpicker/distpicker.data.min.js"></script>
+    <script src="../../../static/js/plugins/distpicker/distpicker.js"></script>
+    <script src="../../../static/js/plugins/distpicker/distpicker.min.js"></script>
+    <script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+    <script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+    <script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+    <script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="../../../static/js/task/taskscheduler/edit.js"></script>
+</body>
+</html>

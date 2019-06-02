@@ -1,0 +1,458 @@
+$(".poi").on('click', function () {
+    $("#poI-coordinate").toggle()
+})
+var objdata = {
+    "mapid": "string",
+    "mapname": "string",
+    "robothadware": "6E:F4:E9:4B:C8:C0",
+    "robotid": "string"
+};
+//图片初始化
+$.ajax({
+    cache: true,
+    type: "POST",
+    url: share + "irobotweb/sys/map/getcurrentmapinfo",
+    data: JSON.stringify(objdata),// 你的formid
+    async: false,
+    processData: false,
+    contentType: 'application/json; charset=utf-8',
+    crossDomain: true,
+    xhrFields: {
+        withCredentials: true
+    },
+    error: function (request) {
+        parent.layer.alert("Connection error");
+    },
+    success: function (data) {
+        console.log(data, 'ajax的请求')
+    }
+});
+//页面值初始化
+$.ajax({
+    url: share + 'irobotweb/sys/map/initrobotstatus?robotid=43eae0c0ddc44bddb749d1b2f43bd9f9',
+    type: "get",
+    cache: false,
+    crossDomain: true,
+    xhrFields: {
+        withCredentials: true
+    },
+    success: function (json) {
+        console.log(json, '列表数据get')
+        console.log(json.macaddress, '列表数据get')
+        json.macaddress
+        // base:null //底盘状态
+        // basic_status:null  //基本状态
+        // chargestatus:null  //充电状态
+        // dist:null  //导航距离
+        // emergencybutton:null  //急停按钮状态
+        // id:null    // 系统内的唯一编号
+        // ipaddress:null  //IP地址
+        // laswer:null  //激光雷达状态
+        // locstatus:null  //定位状态
+        // macaddress:null  //mac地址  硬件地址
+        // movestatus:null  //运动状态
+        // name:null  //用户界面上显示的名字
+        // navcount:null  //成功导航次数
+        // obd:null  //
+        // odom:"0"  //里程计状态
+        // time:null  //导航运动时间
+        // uwb:"1"  //uwb标签状态
+        // version:null  //版本
+        // vtheta:"0.0"  //角速度
+        // vx:"0.0"  //方向速度
+        // vy:"0.0"  //
+        // x:"-3.95652"  //坐标
+        // y:"3.01933"  //
+        // yaw:"0.171725"  //角度
+        $("#id").html(json.id)
+        $("#name").html(json.name)
+        $("#macaddress").html(json.macaddress)
+        $(".x").val(json.x)
+        $(".y").val(json.y)
+        $(".yaw").val(json.yaw)
+        $(".vx").val(json.vx)
+        $(".vy").val(json.vy)
+        $(".vtheta").val(json.vtheta)
+
+        document.getElementById('base-img').setAttribute('src', 'data:image/png;base64,' + json.mapDO.mapfile);
+        $("#base-img").css({
+            "width": json.mapDO.width,
+            "height": json.mapDO.height
+        })
+
+        document.getElementById("canvas").width = json.mapDO.width;
+        document.getElementById("canvas").height = json.mapDO.height;
+        var canvasDom;
+
+        if (!canvasDom) {
+            var dom = $('#canvas')[0]
+            if (dom) {
+                canvasDom = dom.getContext("2d");
+
+            }
+        }
+
+        canvasDom.translate($("#canvas").width() / 2, $("#canvas").height() / 2);
+        //canvasDom.arc(0,0,3,0,2*Math.PI);
+        //canvasDom.scale(1,-1)
+
+        var xd = json.x /0.05-10 ;
+        var yd = -(json.y /0.05 +20);
+
+        var imgdd = document.getElementById("water-location");
+        canvasDom.clearRect(-$("#canvas").width() / 2, -$("#canvas").height() / 2, $("#canvas").width(), $("#canvas").height());
+        canvasDom.beginPath();
+        //canvasDom.arc(0,0,5,0,2*Math.PI);
+        canvasDom.drawImage(imgdd, xd, yd, 20, 20);
+        canvasDom.stroke();
+        //$("#id").html(json.id)
+
+    }
+
+});
+
+// 鼠标右击  触发的结果
+//   阻止右击事件
+window.onload = function () {
+    document.oncontextmenu = function (e) {
+        var e = event || window.event;
+        return false;//取消右键点击的默认事件
+    }
+    document.onclick = function (e) {
+        // console.log('90鼠标左击')
+    }
+}
+$("#bg-img").on('mousedown', function (event) {
+    //left-380   top-55
+    var e = event || window.event;
+    if (window.event) {
+        if (event.button == 2) {
+
+            $("#right-hand").css({
+                "display": "block",
+                "left": e.clientX - 380,
+                "top": e.clientY - 55
+            })
+            var xxd = e.clientX - 380 - $("#canvas").width() / 2
+            var yyd = e.clientX - 380 - $("#canvas").width() / 2
+            sessionStorage.setItem('x', xxd);
+            sessionStorage.setItem('y', yyd);
+            sessionStorage.setItem('xd', $(".x").val());
+            sessionStorage.setItem('yd', $(".y").val());
+
+
+        }
+    }
+
+})
+
+$(".move").on('click', function (event) {
+    console.log('移动')
+})
+
+$(".set").on('click', function (event) {
+    console.log('设置')
+    layer.open({
+        type: 2,
+        title: '设置poi点位',
+        maxmin: true,
+        shadeClose: false,
+        area: ['800px', '520px'],
+        content: './manual.html'  // iframe的url
+    });
+    $("#right-hand").css({
+        "display": "none",
+    })
+})
+
+
+var stompClient = null;
+var  indicator =null;
+
+function connect() {
+    var ctrlNodesArr = [] ////路径上报的点位
+    var ctrlNodesArr2 = [] ////路径上报的点位
+    var dom = $('#canvas')[0]
+    var x = [], y = [];
+    var socket = new SockJS(share + "/ws");
+    var canvasDom;
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        stompClient.subscribe('/topic/public', function (response) {
+            if (!canvasDom) {
+                if (dom) {
+                    canvasDom = dom.getContext("2d");
+
+                }
+            }
+
+            var str = JSON.parse(response.body)
+            console.log(canvasDom, '这是画布的个数DDDDDDDD')
+            if (str.event == 'getCurrentMapInfo') { //地图
+                var img = str.data.base64;
+                var bodydata = str.data;
+                document.getElementById('base-img').setAttribute('src', 'data:image/png;base64,' + img);
+                $("#base-img").css({
+                    "width": bodydata.mapInfoBean.width,
+                    "height": bodydata.mapInfoBean.height
+                })
+                document.getElementById("canvas").width = bodydata.mapInfoBean.width;
+                document.getElementById("canvas").height = bodydata.mapInfoBean.height;
+                canvasDom.translate($("#canvas").width() / 2, $("#canvas").height() / 2)
+                //canvasDom.arc(0,0,3,0,2*Math.PI);
+                canvasDom.stroke();
+            } else if (str.event == 'mapNowPoint') {//点位上报
+                // {
+                //     pos: { x : x坐标
+                //      y : y坐标
+                //      yaw : 角度}  // pos为当前点位
+                //     vel: { x : x方向速度信息
+                //      y : y方向速度信息
+                //      yaw : 角速度信息} //vel为速度信息
+                // }
+
+                console.log('点位上报')
+                var pos = str.data.pos;
+                var vel =str.data.vel;
+                var xd = pos.x / 0.05 - 10;
+                var yd = -(pos.y / 0.05 + 20);
+                $(".x").val(xd)
+                $(".y").val(yd)
+                $(".yaw").val(pos.yaw)
+                $(".vx").val(vel.x)
+                $(".vy").val(vel.y)
+                $(".vtheta").val(vel.yaw)
+                console.log(xd, yd)
+                var imgdd = document.getElementById("water-location");
+
+                canvasDom.clearRect(-$("#canvas").width() / 2, -$("#canvas").height() / 2, $("#canvas").width(), $("#canvas").height());
+
+
+                if (ctrlNodesArr2!=null)
+                {
+                    var bezier4 = new BezierMaker(dom, ctrlNodesArr2, 'blue');
+
+                    bezier4.drawBezier();
+                }
+
+
+
+                canvasDom.beginPath()
+                canvasDom.drawImage(imgdd, xd, yd, 20, 20);
+
+
+
+
+            } else if (str.event == 'mapRealPath') { //运动路径上报
+
+                console.log(str.data.path, '运动路径上报')
+
+               // canvasDom.clearRect(-$("#canvas").width() / 2, -$("#canvas").height() / 2, $("#canvas").width(), $("#canvas").height());
+                canvasDom.strokeStyle = "pink";
+                canvasDom.fillStyle = 'red';
+                canvasDom.lineWidth = 2
+                canvasDom.beginPath();
+             //   canvasDom.lineCap = "round";
+                for (var i = 0; i < str.data.path.length; i++) {
+                    var path = str.data.path[i];
+                    x.push(path.x/0.05)
+                    y.push(-(path.y/0.05))
+                }
+
+                for (j = 0; j < x.length; j++) {
+                    var obj = {
+                        x: x[j],
+                        y: y[j],
+                    }
+                    ctrlNodesArr2.push(obj)
+                }
+                console.log(ctrlNodesArr2);
+
+                // ctrlNodesArr2.forEach(function(item, index){ //找到前一个点到下一个点中间的控制点
+                //     canvasDom.arc(item.x,item.y,1,0,2*Math.PI);
+                // })
+                // canvasDom.stroke();
+
+                var bezier4 = new BezierMaker(dom, ctrlNodesArr2, 'blue');
+
+                bezier4.drawBezier();
+
+
+            } else if (str.event == 'mapMoveStatus') {  //运动状态上报
+                // 0、待命中
+                // 1、上次目标失败，等待新的命令
+                // 2、上次目标完成，等待新的命令
+                // 3、移动中，正在前往目的地
+                // 4、（导航中状态）前方障碍物
+                // 5、（导航中状态）目的地被遮挡
+                // 6、（导航结束状态）导航取消（用户主动取消）
+                // 7、新目标点
+                // 8、（导航中状态）导航路径阻塞
+                console.log(str.data.type, '运动状态上报')
+                if (str.data.type == 2) {
+                    ctrlNodesArr = [];
+                }
+            } else if (str.event == 'mapChargeStatus') { //充电状态上报
+                // 充电状态：
+                // 0、未充电状态：正常运行（未充电）
+                // 1、充电状态：正在连接底座充电
+                // 2、充电状态：正在连接线缆充电
+                // 3、对接过程中：正在和充电座对接
+                // 4、脱离过程中：正在脱离充电座
+                // 5、充电状态：已充满，但仍然连接在充电座上（需发送取消充电指令终止充电
+                console.log(str.data.chargeStatu, '充电状态上报')
+            } else if (str.event == 'mapBaseStatus') { //底盘基本状态上报
+                console.log(str.data, '底盘基本状态上报')
+
+            } else if (str.event == 'mapLocalStatus') {//底盘定位状态上报(代表底盘当前是否定位成功)
+                console.log(str.data.status, '底盘定位状态上报(代表底盘当前是否定位成功)')
+                //status：int 当前状态
+            } else if (str.event == 'mapEmergencyButtonStatus') {//底盘急停开关的状态
+                console.log(str.data.chargeStatu, '充电状态上报')
+            } else if (str.event == 'mapReportStatus') {//底盘运行信息
+                console.log(str.data.chargeStatu, '充电状态上报')
+            }
+        });
+    });
+}
+
+function disconnect() {
+    if (stompClient != null) {
+        stompClient.disconnect();
+    }
+    console.log("Disconnected");
+}
+
+//websocked  连接上
+connect()
+
+
+//  鼠标按下  鼠标长按
+var timeStart, timeEnd, time;//申明全局变量
+//获取此刻时间
+function getTimeNow() {
+    var now = new Date();
+    return now.getTime();
+}
+
+// 触发移动的接口函数
+function triggermove(message) {
+
+    var movedata = {
+        "message": message,
+        "robothadware": "string",//硬件地址   mac 地址
+    }
+    stompClient.send("/app/moverobot", {}, JSON.stringify(movedata));
+}
+
+//  结束移动的接口函数
+//    up上 down下 left左 right右
+//鼠标按下时触发
+//  可以传参数
+function holdDown(message) {
+    timeStart = getTimeNow();//获取鼠标按下时的时间
+    //setInterval会每100毫秒执行一次
+    time = setInterval(function () {
+        timeEnd = getTimeNow();//也就是每100毫秒获取一次时间
+        //如果此时检测到的时间与第一次获取的时间差有1000毫秒
+        triggermove(message)
+        if (timeEnd - timeStart > 1000) {
+            clearInterval(time);//便不再继续重复此函数 （clearInterval取消周期性执行）
+            triggermove(message)
+        }
+    }, 200);
+}
+
+//鼠标抬起
+function holdUp() {
+    clearInterval(time);//如果按下时间不到1000毫秒便弹起，
+    triggermove("stop")
+    console.log('hhh哈哈哈')
+}
+
+
+//页面鼠标
+$("#click-up").on('mousedown', function () {
+    console.log('上')
+    triggermove("up")
+})
+$("#click-up").on('mouseup', function () {
+    console.log('上')
+    holdUp()
+})
+
+$("#click-down").on('mousedown', function () {
+    console.log('下')
+    triggermove("down")
+})
+$("#click-down").on('mouseup', function () {
+    console.log('下')
+    holdUp()
+})
+$("#click-left").on('mousedown', function () {
+    console.log('左')
+    triggermove("left")
+})
+$("#click-left").on('mouseup', function () {
+    console.log('左')
+    holdUp()
+})
+
+$("#click-right").on('mousedown', function () {
+    console.log('右')
+    triggermove("right")
+})
+$("#click-right").on('mouseup', function () {
+    console.log('右')
+    holdUp()
+})
+
+//键盘控制
+document.onkeydown = function (e) {
+    e = window.event || e;
+    switch (e.keyCode) {
+        case 37: //左键
+            console.log('左')
+            triggermove("left")
+            break;
+        case 38: //向上键
+            console.log('上')
+            triggermove("up")
+            break;
+        case 39: //右键
+            console.log('右')
+            triggermove("right")
+            break;
+        case 40: //向下键
+            console.log('下')
+            triggermove("down")
+            break;
+        default:
+            break;
+    }
+}
+document.onkeyup = function (e) {
+    e = window.event || e;
+    switch (e.keyCode) {
+        case 37: //左键
+            console.log('抬起左')
+            holdUp()
+            break;
+        case 38: //向上键
+            console.log('抬起上')
+            holdUp()
+            break;
+        case 39: //右键
+            console.log('抬起右')
+            holdUp()
+            break;
+        case 40: //向下键
+            console.log('抬起下')
+            holdUp()
+            break;
+        default:
+            break;
+    }
+}
+
+

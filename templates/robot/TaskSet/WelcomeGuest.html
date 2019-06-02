@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head  >
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../static/css/animate.css"  rel="stylesheet">
+    <link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+    <link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/fangdajing/iconfont.css">
+    <link rel="stylesheet" href="../../../static/css/packaging.css">
+
+    <link rel="stylesheet" href="../../../static/css/bootstrap-swiper.min.css">
+    <link rel="stylesheet" href="../../../static/css/robot/RobotOperation/iconfont/iconfont.css">
+
+    <link rel="stylesheet" href="../../../static/css/robot/RobotManage/WelcomeGuest_add.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../../../static/css/robot/exhibition.css">
+    <style>
+            .content{display:block;
+                width:80%;
+                height:34px;
+                padding:6px 12px;
+                font-size:14px;
+                line-height:1.42857143;
+                color:#555;
+                background-color:#fff;
+                background-image:none;
+                border:1px solid #ccc;
+                border-radius:4px;
+                -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+    
+             .ml-3{
+                 margin-left: 3px;
+             }
+    
+            .content-border{
+                border: 1px solid #e5e6e7;
+                width: 64.1%;
+                padding: 6px 11px;
+                margin-left: 14px;
+            }
+    
+            .mt-2{
+                 margin-top: 2px;
+             }
+    
+            .mt-3{
+                margin-top: 3px;
+            }
+           
+        </style>
+
+</head>
+<body class="gray-bg">
+        <div class="wrapper wrapper-content ">
+                <div class="row">
+                    <div class="col-sm-12"> <!--id="exhibition"-->
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-content">
+                                <form class="form-horizontal m-t" id="signupFormadd">
+                                    <!-- <input id="userId" name="userId" type="hidden"> -->
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"><span class="red">*</span>任务名称:</label>
+                                        <div class="col-sm-8">
+                                            <input id="taskName" name="taskName" class="form-control" type="text" maxlength="20">
+                                        </div>
+                                    </div>
+            
+                                    <!--<div class="form-group">-->
+                                        <!--<label class="col-sm-3 control-label">地图:</label>-->
+                                        <!--<div class="col-sm-8">-->
+                                            <!--<select id="map" name="map" class="form-control">-->
+                                                <!--<option value="0"></option>-->
+                                                <!--<option value="22">新地图(7)_BAK_2018.12.29.14.39.34</option>-->
+                                                <!--<option value="23">新地图(6)</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+            
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">点位:</label>
+                                        <div class="col-sm-8">
+                                            <div class="packaging-exhibition">
+                                                <input type="hidden" id="pointId" />
+                                                <input id="point" name="point" class="form-control packagin-result rele1-c" type="text" disabled>
+                                                <span class="iconfont icon-fangdajing packaging-fangdajing" id="btn-select-point" onclick="selectPoint()"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-group" id="d-content">
+                                            <label class="col-sm-3 control-label" id="content-label-id">内容:</label>
+                                            <div class="col-sm-8 content-border" id="content_add_id">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">语音:</label>
+                                                    <div class="col-sm-8">
+                                                        <textarea id="voice" name="voice"  class="form-control voice" type="text"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">表情:</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="packaging-exhibition">
+                                                            <input id="emoticon" name="emoticon" class="form-control emoticon" type="text">
+                                                            <span class="iconfont icon-fangdajing packaging-fangdajing" onclick="selectEmoji(this)"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">资源类型:</label>
+                                                    <div class="col-sm-8">
+                                                        <label class="radio-inline">
+                                                            <input type="radio"  checked='checked' name="typews" value="0" /> 图片
+                                                        </label> <label class="radio-inline">
+                                                        <input type="radio"name="typews" value="2" /> 视频
+                                                    </label>
+                                                        <label class="findlabel" >
+                                                            <button class="seekResource">查找资源</button>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">大屏展示:</label>
+                                                    <div class="col-sm-8">
+                                                        <div class="BigSc">
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="form-group" class="d-delay">
+                                                    <label class="col-sm-3 control-label"><span class="red">*</span>图片播放时间:</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="delayTime" id="delayTime" min="5" max="1000" />
+                                                        <label class="control-label" style="margin-left:-1px">秒</label>
+                                                    </div>
+                                                </div>
+            
+                                                <label class="col-sm-3 control-label"></label>
+                                                <div class="col-sm-8">
+                                                    <button type="button" class="btn btn-primary content_add" title="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+            
+                                                    <button type="button" class="btn btn-danger b-delete" title="" >
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+            
+                                                    <button type="button" class="btn btn-default content-up" title="">
+                                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                    </button>
+            
+                                                    <button type="button" class="btn btn-default content-down" title="">
+                                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                    </div>
+            
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-3">
+                                            <button class="btn btn-primary" id="addok">保存</button>
+                                            <!--<button  class="btn btn-danger" id="adddanger">取消</button>-->
+                                            <button type="button" class="btn btn-danger" id="base_return">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+<div ></div>
+<script src="../../../static/js/share.js"></script>
+<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../../../static/js/plugins/layer/layer.js"></script>
+<script src="../../../static/js/content.js?v=1.0.0"></script>
+<!--summernote-->
+<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+<script src="../../../static/js/ajax-util.js"></script>
+<script src="../../../static/js/jquery.auto-complete.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="../../../static/js/common/common.js"></script>
+<script src="../../../static/js/bootstrap-swiper.min.js"></script>
+        <script src="../../../static/js/jquery-ui.min.js"></script>
+<script src="../../../static/js/robot/TaskSet/WelcomeGuest.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-datetimepicker.js"></script>
+
+</body>
+</html>

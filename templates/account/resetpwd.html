@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="../../static/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../static/css/animate.css"  rel="stylesheet">
+    <link href="../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+    <link href="../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/fangdajing/iconfont.css">
+    <link rel="stylesheet" href="../../static/css/packaging.css">
+
+    <link rel="stylesheet" href="../../static/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../../static/css/resetpwd.css">
+
+    <style type="text/css">
+        .ibox-content{
+            height: 750px;
+        }
+    </style>
+
+</head>
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm" autocomplete="off">
+                        <input type="text" id="gid" name="gid" value="">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>旧密码</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="oldpwd" id="oldpwd" placeholder="请输入旧密码" autocomplete="off" class="form-control" maxlength="32">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>新密码</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="newpwd" id="newpwd" placeholder="请输入新密码" autocomplete="off" class="form-control" maxlength="32">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>确认新密码</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="newpwd2" id="newpwd2" placeholder="请输入新密码" autocomplete="off" class="form-control" maxlength="32">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button  type="submit"  class="btn btn-primary"  id="notarize">确认</button>
+                                <a href="./security_setting.html" class="btn btn-danger">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+  <script src="../../static/js/jquery.min.js"></script>
+  <script src="../../static/js/layui.js" charset="utf-8"></script>
+  <script src="../../static/js/plugins/validate/jquery.validate.min.js" ></script>
+  <script src="../../static/js/plugins/layer/layer.min.js" ></script>
+  <script src="../../static/js/plugins/validate/messages_zh.min.js" ></script>
+  <script src="../../static/js/share.js"></script>
+  <script src="../../static/js/resetpwd.js"></script>
+</body>
+</html>

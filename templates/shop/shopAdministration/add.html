@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+    <link rel="stylesheet" href="../../../static/css/shop/shopAdministration/add.css">
+    <link href="../../../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/fangdajing/iconfont.css">
+    <link rel="stylesheet" href="../../../static/css/packaging.css">
+
+    <link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../static/css/animate.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <style>
+        #regionHint, #shopnaHint {
+            color: #cc5965;
+            display: inline-block;
+            margin-left: 5px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .ibox-content {
+            height: 640px;
+        }
+
+    </style>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="basicInfoForm">
+
+                        <div class="form-group" id="d_developer">
+                            <label class="col-sm-3 control-label">所属开发者：</label>
+                            <div class="col-sm-8 ">
+                                <div class="packaging-exhibition">
+                                    <input id="developerid" name="developerid"
+                                           class="form-control packagin-result rele1" type="text" disabled>
+                                    <span class="iconfont icon-fangdajing packaging-fangdajing"
+                                          onclick="showDevelopers()"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id="d_customer">
+                            <label class="col-sm-3 control-label">所属用户：</label>
+                            <div class="col-sm-8 ">
+                                <div class="packaging-exhibition">
+                                    <input id="customerid" name="customerid"
+                                           class="form-control packagin-result rele1-c" type="text" disabled>
+                                    <span class="iconfont icon-fangdajing packaging-fangdajing"
+                                          onclick="showCustomers()"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>店铺名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shopName" name="shopName" maxlength="40"
+                                       placeholder="请输入店铺名称"/>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-md-8" data-toggle="distpicker" id="shopnaHint">
+                                <i class='fa fa-times-circle'></i>
+                                请输入店铺名称
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">店铺联系人：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="shopcontacts" maxlength="20"
+                                       name="shopcontacts" placeholder="请输入店铺联系人"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">店铺联系人手机：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="mobile" name="mobile"
+                                       placeholder="请输入店铺联系人手机"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">店铺联系人邮箱：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="email" name="email"
+                                       placeholder="请输入店铺联系人邮箱"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">主营业务：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="industry" maxlength="40" name="industry"
+                                       placeholder="请输入主营业务"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">店铺座机：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="phone" maxlength="20" name="phone"
+                                       placeholder="请输入店铺座机"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>所在地区：</label>
+
+                            <div class="col-md-8" data-toggle="distpicker" id="datogg">
+                                <div class="col-sm-4" style="padding: 0px;">
+                                    <select class="form-control" id="provinceName" name="provinceName"></select>
+                                </div>
+                                <div class="col-sm-4 "style="padding: 0px;">
+                                    <select class="form-control" id="cityName" name="cityName"></select>
+                                </div>
+                                <div class="col-sm-4 " style="padding: 0px;" >
+                                    <select class="form-control" id="areaName" name="areaName"></select>
+                                </div>
+                            </div>
+                        </div>          
+                        <!-- <div class="form-group">
+                            <label class="col-sm-3 control-label"></label>
+
+                            <div class="col-md-8" data-toggle="distpicker" id="regionHint">
+                                <i class='fa fa-times-circle'></i>
+                                请选择所在地区
+                            </div>
+                        </div> -->
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">详细地址：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" maxlength="50" id="address" name="address"
+                                       placeholder="请输入详细地址"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">状态：</label>
+                            <div class="col-sm-8">
+                                <label class="radio-inline">
+                                    <input type="radio" name="status" value="1" checked="checked"/>正常
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="status" value="0"/>禁用
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" id="base_save">保存</button>
+                                <!--<button type="button" class="btn btn-primary" id="cancel">取消</button>-->
+                                <input type="reset" class="btn btn-danger" value="取消" id="btn-cancel">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div></div>
+
+<script src="../../../static/js/share.js"></script>
+<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="../../../static/js/layui.js"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.extend.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.data.min.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.min.js"></script>
+
+<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../../../static/js/plugins/layer/layer.min.js"></script>
+<script src="../../../static/js/content.js?v=1.0.0"></script>
+<!--summernote-->
+<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+<script src="../../../static/js/ajax-util.js"></script>
+<script src="../../../static/js/jquery.auto-complete.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="../../../static/js/common/common.js"></script>
+<script src="../../../static/js/packaging.js"></script>
+<script type="text/javascript" src="../../../static/js/shop/shopAdministration/add.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+    /*.layui-input-block{*/
+        /*width: 300px;*/
+        /*margin-left: 130px;*/
+    /*}*/
+    .text2{
+        padding: 10px; line-height: 25px; text-align: left;
+        margin-left: 10px;
+    }
+
+    .imgPreview
+    {
+        width: 300px;
+        height: 180px;
+        border: 1px solid black;
+        text-align: center;
+
+        margin-top: 10px;
+    }
+    .filepath {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: red;
+    }
+    .prompt3 {
+        width: 100%;
+        height: 180px;
+        text-align: center;
+        position: relative;
+    }
+   label{
+
+       text-align:right;
+   }
+    /*        #imgSpan {
+            position: absolute;
+            top: 60px;
+            left: 40px;
+        }*/
+
+    .image1 {
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
+    .imgSpan{
+        position: absolute;
+        margin-top:  75px;
+        margin-left: 100px;
+
+    }
+    #textmsg{
+
+        font: 14px;
+        color: red;
+        margin-left: 15px;
+
+    }
+
+    .mydisabled
+    {
+        background-color: #EEEEEE;
+    }
+
+    .ml70{
+        margin-left: 70px;
+    }
+
+    .ml80{
+        margin-left: 80px;
+    }
+
+    .ml90{
+        margin-left: 90px;
+    }
+
+    .ml100{
+        margin-left: 100px;
+    }
+
+    .ml120{
+        margin-left: 120px;
+    }
+
+    .ml130{
+        margin-left: 130px;
+    }
+
+    #imgPreview,#imgPreview2,#img31,#img32,#prompt32,#prompt31,#file,#file2,#file3{
+        cursor: pointer;
+    }
+

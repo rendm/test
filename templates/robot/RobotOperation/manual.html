@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">  
+	<link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+	<link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/jquery.range.css">
+	<link rel="stylesheet" href="../../../static/css/robot/RobotOperation/manual.css">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">  
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<!-- <input id="userId" name="userId" type="hidden"> -->
+							<div class="form-group">
+								<div class="col-sm-8 ">
+									<!-- <span id="manualqw">设位当前点</span> -->
+									<span id="acquireqw">机器人当前点位置</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">点位名称:</label>
+								<div class="col-sm-8">
+									<input id="poiname" name="poiname" class="form-control" type="text" maxlength="20">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">点位类型:</label>
+								<div class="col-sm-8">
+									<select name="poitype" id="poitype"  lay-filter="myselect"  class="form-control "  >
+										<option value="wlcmpoint" selected>迎宾点</option>
+										<!--<option value="adpoint" selected>广告点</option>-->
+										<!--<option value="expoint" selected>讲解点</option>-->
+										<option value="takepoint" selected>取物点</option>
+										<option value="sendingpoint" selected>送物点</option>
+										<option value="poipoint" selected>普通点</option>
+										<option value="chargepoint">充电点</option>
+									</select>
+								</div>
+
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">坐标X/m:</label>
+								<div class="col-sm-8">
+									<input id="x" name="x" class="form-control"
+										type="text">
+								</div>
+							</div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"> 坐标Y/m:</label>
+                                <div class="col-sm-8">
+                                    <input id="y" name="y" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">角度yaw/rad:</label>
+                                <div class="col-sm-8">
+                                    <input id="yaw" name="yaw" class="form-control" type="text">
+                                </div>
+                            </div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary" id="ok">保存</button>
+									<input type="reset" class="btn btn-danger" value="取消" id="countermandbtn">
+								</div>
+							</div>
+						</form>  
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div ></div>
+	<script src="../../../static/js/share.js"></script>
+	<script src="../../../static/js/jquery.min.js"></script>
+
+	<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->
+	<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../../static/js/ajax-util.js"></script>
+	<script src="../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>
+	<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script src="../../../static/js/jquery.range-min.js"></script>
+	<script src="../../../static/js/bootstrap-swiper.min.js"></script>
+	<script src="../../../static/js/robot/RobotOperation/manual.js"></script>
+	
+</body>
+</html>

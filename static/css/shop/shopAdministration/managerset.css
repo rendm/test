@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grid-demo{padding: 10px; line-height: 30px; text-align: left;}
+.text2{padding: 10px; line-height: 40px; text-align: left;   margin-left: 20px; font-size: small }
+.text3{padding: 10px; line-height: 40px; text-align: left;}
+.fa-exclamation-circle{
+            padding: 0 8px 0 0;
+            position: relati
+}
+.fa-check-circle{
+    padding: 0 8px 0 0;
+    position: relative;
+    color:#1fc344;
+}
+.mydisabled{
+    background-color: #EEEEEE;
+}
+
+label.layui-form-label{
+    padding: 5px;
+    line-height:40px;
+}
+img{
+    width: 95%;
+}
+.layui-form-label{
+    width: 100px;
+}
+#userinfo{
+    display: flex;
+    flex-wrap: wrap;
+}
+.layui-form-item:nth-child(5) > div:nth-child(1) > label:nth-child(1){
+
+}
+#back{
+    width: 770px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* span外面的盒子 */
+.progressbg{
+    width: 150px;
+    height:12px;
+    border-radius:6px;
+    border: 1px solid #ccc;
+    position: relative;
+    background: #ccc;
+}
+.progress{
+    display: inline-block;
+    position: absolute;
+    left:0;
+    top:0;
+    height:10px;
+    border-radius: 5px;
+    background: #18a689;
+    width: 0;
+    color:#fff;
+    font-size: 10px;
+    text-align: center;
+}
+.textcenter{
+    width: 80px;
+    text-align: center;
+    margin-left:20px;
+}
+#userinfo{
+    height:auto;
+    margin-top:-200px;
+    transition: margin-top 1s;
+}
+#lab{
+    padding:0;
+}

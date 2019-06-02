@@ -1,0 +1,25 @@
+/* .layui-upload-img {
+    width: 150px;
+    height: 160px;
+    border: 1px solid;
+
+} */
+#uploadbtn{
+   margin-left: 24px;
+}
+
+label.layui-form-label
+{
+    width: 100px;
+}
+input.mydisabled
+{
+    background-color: #eeeeee;
+}
+label.layui-form-label{
+    width: 150px;
+}
+
+.red{
+    color: red;
+}

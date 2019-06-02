@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+	<link rel="stylesheet" href="../../../static/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-switch.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="../../../static/css/robot/RobotOperation/operationiconfont/iconfont.css">
+    <link rel="stylesheet" href="../../../static/css/robot/RobotOperation/ControlNew.css">
+
+</head>
+<body>
+<div id="cont-big">
+    <div id="box">
+       <div id="box-to-left">
+            <div id="robot-intro">
+                <div id="intro-img">
+                    <img src="../../../static/img/robotoper/机器人头像.png" alt="">
+                </div>
+                <span id="intro-name">
+                    <b>名称:</b>
+                    <span> </span>
+                </span>
+                <span id="intro-id">
+                    <b>ID:</b>
+                    <span> </span>
+                </span>
+            </div>
+            <div id="robot-status">
+                
+                <span class="across">
+                    <b>机器人状态</b>
+                    <small id="robotstatus">
+
+                    </small>
+                </span>
+                <span class="across" id="suspensionre">
+                    <b>当前任务</b>
+                    <small id="currenttaskname"> </small>
+                    <span id="suspensionab">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</span>
+                </span>
+                <span class="across">
+                    <b>参考电量</b>
+                    <small id="batterypower"></small>
+                </span>
+                <span class="across">
+                    <b>硬件状态</b>
+                    <small id="MapBaseStatus"> </small>
+                </span>
+                <span class="across">
+                    <b>储物箱</b>
+                    <small>空</small>
+                </span>
+                <span class="across">
+                    <b>状态灯信息</b>
+                    <small id="statusLight">
+                     <div id ="light"></div>
+                    </small>
+                </span>
+                <span class="across">
+                    <b>坐标 | X</b>
+                    <small id="X"> </small>
+                </span>
+                <span class="across">
+                    <b>坐标 | Y</b>
+                    <small id="Y"> </small>
+                </span>
+                <span class="across">
+                    <b>角度 | yaw</b>
+                    <small id="Yaw"> </small>
+                </span>
+                <span class="across">
+                    <b>
+                        手动控制
+                    </b>
+                    <small>
+                        <span>关</span>
+                        <img id="shift-knob" src="../../../static/img/robotoper/关.png" alt="">
+                        <span>开</span>
+                    </small>
+                </span>
+            </div>
+            <div id="robot-pt">
+                <span>点位设置</span>
+                <div id="setpt">
+                    <dl>
+                        <dd>
+                            <img src="../../../static/img/robotoper/icon_左_充电点.png" id="charge-gray_highlight" alt="">
+                        </dd>
+                        <dt>充电点</dt>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <img src="../../../static/img/robotoper/icon_左_迎宾点.png" id="usher-gray_highlight" alt="">
+                        </dd>
+                        <dt>迎宾点</dt>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <img src="../../../static/img/robotoper/icon_左_送物点.png" id="send-gray_highlight" alt="">
+                        </dd>
+                        <dt>送物点</dt>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <img src="../../../static/img/robotoper/icon_左_取物点.png" id="fetch-gray_highlight" alt="">
+                        </dd>
+                        <dt>取物点</dt>
+                    </dl>
+                    <dl>
+                        <dd>
+                            <img src="../../../static/img/robotoper/icon_左_普通点.png" id="general-gray_highlight" alt="">
+                        </dd>
+                        <dt>普通点</dt>
+                    </dl>
+                </div>
+            </div>
+            <div id="robot-side-btn">
+                <div id="side-le">
+                    <img id="open-leftbox" src="../../../static/img/robotoper/btn_左侧箱.png" alt="">
+                </div>
+                <div id="side-ri">
+                    <img id="open-rightbox" src="../../../static/img/robotoper/btn_右侧箱.png" alt="">
+                </div>
+            </div>
+            <div id="recharge-btn">
+                <!-- <span> -->
+                    <img id="immediately-recharge" src="../../../static/img/robotoper/btn_立即回充.png" alt="">
+                <!-- </span> -->
+            </div>
+       </div>
+       <div id="box-tt-right">
+           <div id="box-ri-topheader">
+                    <span id="box-ri-top-re">
+                        <b class="re-arrows"></b>
+                        <b class="re-text">返回</b>
+                    </span>
+                    <span hidden>
+                            <span id="messagex" style="visibility:hidden"></span>
+                            <span id="messagey" style="visibility: hidden"></span>
+                    </span>
+                    <span id="box-ri-to-robotimg">
+                        <img src="../../../static/img/robotoper/机器人头像.png" alt="">
+                        <b>超级管理员的</b>
+                    </span>
+           </div>
+           <div id="box-le-content">
+                <div id="box-ri-con-img">
+                    <img id="base-img" class="base-img" src="" alt="">
+                    <canvas  id="canvas"  class="canvas"></canvas>
+                    <img src="../../../static/img/robotoper/icon_机器人当前位置.png" alt="" class="water-location" id="water-location">
+                    <!-- 迎宾点 取物点 送物点 普通点 充电点 -->
+                    <img src="../../../static/img/robotoper/迎宾.png" alt="" class="wlcmpoint-pt" id="wlcmpoint-pt">
+                    <img src="../../../static/img/robotoper/取物.png" alt="" class="takepoint-pt" id="takepoint-pt">
+                    <img src="../../../static/img/robotoper/送物.png" alt="" class="sendingpoint-pt" id="sendingpoint-pt">
+                    <img src="../../../static/img/robotoper/普通.png" alt="" class="poipoint-pt" id="poipoint-pt">
+                    <img src="../../../static/img/robotoper/充电.png" alt="" class="chargepoint-pt" id="chargepoint-pt">
+                    <!-- 28*35 -->
+                    <div class="quack"></div>
+                    
+                    <div id="right-hand">
+                        <ul>
+                            <!-- <li class="move">移动到该点位</li> -->
+                            <li class="set">新增点位</li>
+                            <li id="editPoint">编辑</li>
+                            <li id="delPoint">删除</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="box-ri-btn-controller">
+                    <span class="imgtext-btn">
+                        <span>
+                            <img id="Replace-map" src="../../../static/img/robotoper/btn_替换地图.png" alt="">
+                        </span>
+                        <span>替换地图</span> 
+                    </span>
+                    <span class="imgtext-btn">
+                            <span>
+                                <img id="restricted-area" src="../../../static/img/robotoper/btn_限制区域.png" alt="">
+                            </span>
+                            <span>限制区域</span>
+                         </span>
+                     <span class="imgtext-btn">
+                        <span>
+                            <img id="execute-task" src="../../../static/img/robotoper/btn_执行任务.png" alt="">
+                        </span>
+                        <span>执行任务</span>
+                     </span>
+                     <span class="imgtext-btn">
+                        <span>
+                            <img id="immediately-stop" src="../../../static/img/robotoper/btn_立即停止.png" alt="">
+                        </span>
+                        <span>立即停止</span>
+                     </span>
+                     <span class="imgbtn-zoom">
+                        <span class="img-plus-btn">
+                            <img src="../../../static/img/robotoper/放大.png" alt="">
+                        </span>
+                        <span class="img-minus-btn">
+                            <small></small>
+                            <img src="../../../static/img/robotoper/缩小.png" alt="">
+                        </span>
+                     </span>
+                     <span class="imgbtn-direction">
+                         <img src="../../../static/img/robotoper/bg_方向键.png" alt="">
+                         <div id="outline-border">
+                             <div class="po-di">
+                                    <span class="advance"></span>
+                                    <span class="retreat"></span>
+                                    <span class="releft"></span>
+                                    <span class="reright"></span>
+                             </div>
+                         </div>
+                     </span>
+                </div>
+           </div>
+       </div>
+    </div>
+      <div id="execute-pup-op">
+          <div id="float-div">
+                <div id="execute-pup-op-content">
+                    <div id="pup-op-headertop">
+                        <span>任务执行</span>
+                        <span id="fork-btn">×</span>
+                    </div>
+                    <div id="pup-op-content">
+                        <div id="pup-op-content-left">
+                            <div id="ad-task" class="icon-bg-btn">
+                                <span class="iconfont icon-guanggao">
+                                </span>
+                                <span class="guanggao-text">
+                                    广告展示
+                                </span>
+                            </div>
+                            <div id="usher-task" class="icon-bg-btn">
+                                <span class="iconfont icon-renxiang">
+                                </span>
+                                <span class="renxiang-text">
+                                    迎宾任务
+                                </span>
+                            </div>
+                            <div id="give-task" class="icon-bg-btn">
+                                <span class="iconfont icon-huabankaobei-">
+                                </span>
+                                <span class="huabankaobei-text">
+                                    送物任务
+                                </span>
+                            </div>
+                            <div id="explain-task" class="icon-bg-btn">
+                                <span class="iconfont icon-qizi">
+                                </span>
+                                <span class="qizi-text">
+                                    定点讲解
+                                </span>
+                            </div>
+                        </div>
+                        <div id="pup-op-content-titleri">
+                            <!-- <p>
+                                <span class="perna">广告展示</span>
+                                <span class="perna-btn">
+                                    <span class="perna-show"></span> 
+                                    <span class="perna-execute">立即执行1</span>
+                                </span>
+                            </p>  -->
+                           
+                        </div>
+                    </div>
+                </div>
+          </div>
+       </div>
+</div>
+<script>    
+    
+</script>
+    <script src="../../../static/js/share.js"></script>
+
+	<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->  
+	<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../../static/js/ajax-util.js"></script>
+	<script src="../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>
+    <script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+    <script src="../../../static/js/sockjs.min.js"></script>
+    <script src="../../../static/js/stomp.min.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script src="../../../static/js/plugins/bezierMaker/bezierMaker.js"></script>
+    <script src="../../../static/js/bootstrap/bootstrap-switch.js"></script>
+    <script src="../../../static/js/bootstrap/bootstrap-switch.min.js"></script>
+    <script src="../../../static/js/e-smart-zoom-jquery.min.js"></script>
+    <script src="../../../static/js/common/common.js"></script>
+    <script src="../../../static/js/robot/RobotOperation/ControlNew.js"></script>
+</body>
+</html>

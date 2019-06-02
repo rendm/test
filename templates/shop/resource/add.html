@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head  >
+	<link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">  
+	<link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+	<link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/shop/resource/add.css">
+
+	<style type="text/css">
+		.ibox-content{
+			height: 640px;
+		}
+	</style>
+
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">  
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input id="userId" name="userId" type="hidden">
+							<!-- <div class="form-group">
+								<label class="col-sm-3 control-label"> <span class="red">*</span> 所属开发者：</label>
+								<div class="col-sm-8">
+									<input id="name" name="name" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="red">*</span>所属店铺名称</label>
+								<div class="col-sm-8">
+									<input id="shopId" name="shopId" class="form-control"
+										type="text">
+								</div>
+							</div> -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="red">*</span>资源名称:</label>
+								<div class="col-sm-8">
+									<input id="filename" name="filename" class="form-control"
+										type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="red">*</span>资源类型:</label>
+								<div class="col-sm-8">
+									<select id="type" name="type" class="form-control">
+										<option value="0">图片</option>
+										<option value="1">音频</option>
+										<option value="2">视频</option>
+										<option value="3">其他</option>
+									</select>
+									<span id="type_desc"></span>
+								</div>
+							</div>
+							<input type="hidden" name="roleIds" id="roleIds">
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">备注:</label>
+								<div class="col-sm-8">
+									<!--<select id="remark" name="roleName" class="form-control">
+											<option value="0">头像</option>
+											<option value="1">图标</option>
+											<option value="2">通用</option>
+									</select>-->
+									<!--改成文本框-->
+									<input id="remark" name="remark" class="form-control" type="text">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><span class="red">*</span>文件名称:</label>
+                                <div class="col-sm-8" id="browsebg">
+                                    <input type="text" placeholder="请选择资源文件" id="aim" disabled/>
+                                    <span class="btn btn-success fileinput-button">
+                                        <span>选择</span>
+                                        <!--<form id="uploadForm" enctype="multipart/form-data" action="Upload" method="post"></form>-->
+                                        <!--<input type="file" id="file" value="" />-->
+                                        <input id="file" type="file" class="file" name="fileUpload" />
+                                    </span>
+                                    
+                                </div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<span type="submit" class="btn btn-primary" id="ok">保存</span>
+									<button  class="btn btn-danger" id="danger">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div ></div>
+	<script src="../../../static/js/share.js"></script>
+	<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->
+	<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../../static/js/ajax-util.js"></script>
+	<script src="../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>
+	<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script src="../../../static/js/shop/resource/add.js"></script>
+	
+</body>
+</html>

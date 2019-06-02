@@ -1,0 +1,11 @@
+#save{
+    width: 95px;
+    height: 34px;
+    text-align:center;
+    line-height: 34px;
+    background: #1ab394;
+    color: #fff;
+    font-size: 14px;
+    border:1px solid #1ab394;
+    border-radius: 2px;
+}

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../static/css/animate.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+    <link rel="stylesheet" href="../../../static/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-switch.css">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="../../../static/css/robot/RobotOperation/control.css">
+
+    <style>
+        .d-task-list ul li {
+            cursor: pointer;
+            background-color: whitesmoke;
+            border: 1px solid #cecece;
+            margin-top: 1px;
+            height: 22px;
+            width: 80%;
+        }
+
+        .task-name {
+            font-size: 15px;
+            background-color: #c0c4cd;
+            margin-top: 2px;
+            height: 30px;
+            line-height: 28px;
+            padding-left: 8px;
+        }
+
+        .task-ex {
+            text-align: center;
+            width: 100%;
+            background-color: #c0c4cd;
+            height: 40px;
+            line-height: 38px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .circle {
+            width: 12px;
+            height: 12px;
+            background-color: red;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-wlcm {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: DarkCyan;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-ad {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: DarkGoldenRod;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-ex {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: Fuchsia;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-get {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: #33FFFF;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-take {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: Navy;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-sending {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: blue;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-normal {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: IndianRed;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .circle-charge {
+            clear: left;
+            width: 12px;
+            height: 12px;
+            background-color: #ff0000;
+            border-radius: 12px;
+            display: block;
+            float: left;
+            margin: 6px;
+        }
+
+        .mt-8 {
+            margin-top: 8px;
+        }
+
+        .color-list {
+            width: 12%;
+        }
+
+        .btn-showpic {
+            display: inline-block;
+            width: 80px;
+            height: 32px;
+            line-height: 32px;
+            text-decoration: none;
+            /*color: #ddd;*/
+            border: 1px solid #fff;
+        }
+
+        #d-showpic {
+            width: 200px;
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+        }
+
+        .btn-showpic:hover {
+            background-color: #333;
+            color: #eee;
+        }
+
+        .c-point {
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body onload="disconnect()">
+<div id="box">
+    <div>
+        <div class="header-top">
+            <div class="header-top-content">
+                <!--<div class="columns pull-left  col-md-2 ">
+                    <input id="genid" type="text" class="form-control" placeholder="请输入机器人名称">
+                </div>
+                <div class="columns pull-left ">
+                    <button class="btn btn-success" id="btnreload">查询</button>
+                </div>-->
+                <div class="robot-identity">
+                    <!--机器人id :<span id="id"></span>-->
+                    <!--机器人名称:<span id="name"> </span>-->
+                    <!--机器人硬件地址:<span id="macaddress"> </span>-->
+                    <p id="message">
+                    <div hidden>
+                        X=<span id="messagex" style="visibility:visible"></span>
+                        Y=<span id="messagey" style="visibility: visible"></span>
+                    </div>
+
+                    <div id="top-point-info">
+                        点位名称:<span id="s-poiName">办公室</span>
+                        点位类型:<span id="s-poiType">迎宾点</span>
+                        <button class="btn btn-success" id="editPoint">编辑</button>
+                        <button class="btn btn-success" id="delPoint" style="margin-left: 4px;">删除</button>
+                    </div>
+                    </p>
+                </div>
+                <div class="columns pull-right ">
+                    <button class="btn btn-success" id="backtrack">返回</button>
+                </div>
+            </div>
+        </div>
+        <div class="content-center">
+            <div class="left-data col-lg-2">
+                <div class="content-center-data-left">
+                    <div class="content-center-data-left-top">
+                        <p class="robot-name"><span id="s-robotname">名称:小昭</span></p>
+                        <!--<p class="robot-id"><span id="s-robotid">ID:111111</span></p>-->
+                        <p class="recharge"><span>立即回充</span></p>
+                        <p class="storage-box">
+                            <span>打开右储物箱</span>
+                            <span style="border:1px solid #fff;height: 100%; margin:0 1px; "></span>
+                            <span>打开左储物箱</span>
+                        </p>
+                        <p class="stop-task"><span>立即停止</span></p>
+                        <!--<p class="set-item"><span>设置</span></p>-->
+                    </div>
+                    <!--<div class="content-center-data-left-top-middle" id="electricity">-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">电池电压：</span>-->
+                    <!--<input class="col-sm-8" id="" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">电池电流：</span>-->
+                    <!--<input class="col-sm-8" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">参考电量：</span>-->
+                    <!--<input class="col-sm-8" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">充电状态：</span>-->
+                    <!--<input class="col-sm-8" id="chargestatus" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--&lt;!&ndash; <p>-->
+                    <!--<span class=" col-sm-4"  >待命状态：</span>-->
+                    <!--<input class="col-sm-8" id="" type="text"  >-->
+                    <!--</p> &ndash;&gt;-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">导航状态：</span>-->
+                    <!--<input class="col-sm-8" id="movestatus" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-4">定位状态：</span>-->
+                    <!--<input class="col-sm-8" id="locstatus" type="text" disabled >-->
+                    <!--</p>-->
+                    <!--</div>-->
+                    <!--<div id="indicator">-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-6">-->
+                    <!--<small>base</small>-->
+                    <!--<em id="base"></em>-->
+                    <!--</span>-->
+                    <!--<span class="col-sm-6">-->
+                    <!--<small>雷达</small>-->
+                    <!--<em id="laswer"></em>-->
+                    <!--</span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                    <!--<span class="col-sm-6">-->
+                    <!--<small>UWB</small>-->
+                    <!--<em id="uwb"></em>-->
+                    <!--</span>-->
+                    <!--<span class="col-sm-6">-->
+                    <!--<small>ODOM</small>-->
+                    <!--<em id="odom"></em>-->
+                    <!--</span>-->
+                    <!--</p>-->
+                    <!--</div>-->
+
+                    <div id="site">
+                        <p>
+                            <span class="col-sm-6">机器人状态:</span>
+                            <input class="col-sm-6" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">参考电量:</span>
+                            <input class="col-sm-6" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">硬件状态:</span>
+                            <input class="col-sm-6" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">储物箱:</span>
+                            <input class="col-sm-6" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">状态灯信息:</span>
+                            <input class="col-sm-6" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">坐标|X:</span>
+                            <input class="col-sm-6" id="x" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">坐标|Y:</span>
+                            <input class="col-sm-6" id="y" type="text" disabled>
+                        </p>
+                        <p>
+                            <span class="col-sm-6">角度|Yaw:</span>
+                            <input class="col-sm-6" id="yaw" type="text" disabled>
+                        </p>
+                        <p style="margin: 0;padding: 0;">
+                            <span class="col-sm-6">手动控制:</span>
+                            <input name="status" type="checkbox" value="2" id="manual_control">
+                        </p>
+
+                        <!--<p>-->
+                        <!--<span class="col-sm-6">纵向速度|Vx：</span>-->
+                        <!--<input class="col-sm-6" id="vx" type="text" disabled >-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<span class="col-sm-6">横向速度|Vy：</span>-->
+                        <!--<input class="col-sm-6" id="vy" type="text" disabled >-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<span class="col-sm-6">角速度|W：</span>-->
+                        <!--<input class="col-sm-6" type="text" id="vtheta" disabled >-->
+                        <!--</p>-->
+
+                    </div>
+                    <div id="controlimg">
+                        <img src="../../../static/img/direction1.png" alt="" id="img-dir">
+                        <div id="outside">
+                            <div class="feint">
+                                <div id="click-up" class="c-point"><span></span></div>
+                                <div id="click-right" class="c-point"><span></span></div>
+                                <div id="click-down" class="c-point"><span></span></div>
+                                <div id="click-left" class="c-point"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-center-data-right" hidden>
+                    <div id="poI-coordinate">
+                        <p class="drawmap"><span>绘制地图</span></p>
+                        <p class="opendoor"><span>储物仓开门</span></p>
+                        <p class="closedoor"><span>储物仓关门</span></p>
+                        <!--<p class="poi"><span>POI点</span></p>-->
+                        <p class="recharge"><span>充电</span></p>
+                        <p class="cancel-recharge"><span>取消充电</span></p>
+                        <p class="menu"><span>POI管理</span></p>
+                    </div>
+                </div>
+            </div>
+            <!--border:1px solid red;background-color:lightgoldenrodyellow;-->
+            <div class="center-img col-lg-8">
+
+                <!--<div id="drawmap-main">-->
+                <!--<div class="drawmap-item">开始绘制</div>-->
+                <!--<div class="drawmap-item">中断绘制地图</div>-->
+                <!--<div class="drawmap-item">完成绘制地图</div>-->
+                <!--</div>-->
+                <!--可居中的设置style="text-align: center; margin: 0 auto;padding: 0;clear: both;height: auto;"-->
+                <!--background-color:lightcyan;-->
+                <div id="bg-img" style="">
+                    <div class="col-lg-9" id="d-parent-img">
+                        <img src="" alt="" class="base-img" id="base-img">
+                        <!--画布 -->
+                        <canvas id="canvas"></canvas>
+
+                        <div id="right-hand">
+                            <ul>
+                                <li class="move">移动到该点位</li>
+                                <li class="set">新增点位</li>
+                            </ul>
+                        </div>
+
+                        <div id="left-hand">
+                            <ul>
+                                <li class="delete-point">删除</li>
+                                <li class="edit-point">编辑</li>
+                            </ul>
+                        </div>
+                        <!--水滴图-->
+                        <img src="../../../static/img/w-l.png" alt="" class="water-location" id="water-location">
+
+                    </div>
+
+                    <div class="col-lg-3 pull-right color-list">
+                        <div class="mt-8"><span class="circle-wlcm"></span><span>迎宾点</span></div>
+                        <!--<div class="mt-8"><span class="circle-get"></span><span>取物点</span></div>-->
+                        <!--<div class="mt-8"><span class="circle-ad"></span><span>广告点</span></div>-->
+                        <!--<div class="mt-8"><span class="circle-ex"></span><span>讲解点</span></div>-->
+                        <div class="mt-8"><span class="circle-take"></span><span>取物点</span></div>
+                        <div class="mt-8"><span class="circle-sending"></span><span>送物点</span></div>
+                        <div class="mt-8"><span class="circle-normal"></span><span>普通点</span></div>
+                        <div class="mt-8"><span class="circle-charge"></span><span>充电点</span></div>
+                    </div>
+
+                    <div id="d-showpic">
+                        <button class="btn-showpic" id="btnBig">点击放大</button>
+                        <button class="btn-showpic" id="btnSmall">点击缩小</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-c col-lg-2" id="right-coordinate">
+                <!--<p>-->
+                <!--<span class="col-sm-5">目的地点位：</span>-->
+                <!--<img src="../../../static/img/w-l.png" alt="" class="bourn-img">-->
+                <!--</p>-->
+                <!--<p>-->
+                <!--<span class="col-sm-5">坐标|X：</span>-->
+                <!--<input class="col-sm-5" type="text" disabled >-->
+                <!--</p>-->
+                <!--<p>-->
+                <!--<span class="col-sm-5">坐标|y：</span>-->
+                <!--<input class="col-sm-5" type="text" disabled >-->
+                <!--</p>-->
+                <!--<p>-->
+                <!--<span class="col-sm-5">坐标|yaw：</span>-->
+                <!--<input class="col-sm-5" type="text" disabled >-->
+                <!--</p>-- >
+                <!--border: 1px solid hotpink;-->
+                <div style="" class="d-task-list">
+                    <p class="task-ex" style="">
+                        任务运行
+                    </p>
+                    <!--<p class="task-name" style="margin-top: 2px;">迎宾任务</p>-->
+                    <!--<ul>-->
+                    <!--<li onclick="taskExecute()" >迎宾任务1</li>-->
+                    <!--<li onclick="taskExecute()" style="cursor: pointer;">迎宾任务2</li>-->
+                    <!--<li onclick="taskExecute()" style="cursor: pointer;">迎宾任务3</li>-->
+                    <!--</ul>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../static/js/share.js"></script>
+
+<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../../../static/js/plugins/layer/layer.js"></script>
+<script src="../../../static/js/content.js?v=1.0.0"></script>
+<!--summernote-->
+<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+<script src="../../../static/js/ajax-util.js"></script>
+<script src="../../../static/js/jquery.auto-complete.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+<script src="../../../static/js/sockjs.min.js"></script>
+<script src="../../../static/js/stomp.min.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="../../../static/js/plugins/bezierMaker/bezierMaker.js"></script>
+<script src="../../../static/js/bootstrap/bootstrap-switch.js"></script>
+<script src="../../../static/js/bootstrap/bootstrap-switch.min.js"></script>
+<script src="../../../static/js/e-smart-zoom-jquery.min.js"></script>
+<script src="../../../static/js/common/common.js"></script>
+<script src="../../../static/js/robot/RobotOperation/control.js"></script>
+</body>
+</html>

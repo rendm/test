@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#red{
+    color: red;
+}
+#browsebg{
+    display: flex;
+}
+
+#file{
+   
+}
+#browsebg{
+    display: flex;
+}
+#file{
+    z-index:2;
+    opacity:0;
+}
+
+#filea{
+    width: 54px;
+    height: 34px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 20px;
+    background: #1a7bb9;
+    color:#fff;
+    z-index:12;
+}
+
+.fileinput-button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.fileinput-button input{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+}
+#aim{
+    width: 300px;
+    height:34px;
+    border: 1px solid #e5e6e7;
+    border-radius:2px;
+    padding-left:10px;
+}
+
+.ibox-content{
+    height: 400px;
+}
+/* #emptydd{
+    width: 400px;
+    display: flex;
+
+}
+#emptydd span{
+    display:inline-block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: rgba(57, 61, 73, 1);
+    border:1px solid #fff;
+} */
+#nowaday{
+    display:inline-block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: rgba(57, 61, 73, 1);
+    border:1px solid #fff;
+}
+#robotPosition{
+    display:inline-block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    background: rgba(57, 61, 73, 1);
+    border:1px solid #fff;
+}
+#acquire{
+    background: rgba(57, 61, 73, 1);
+}
+#manual{
+    background: rgba(57, 61, 73, 1);
+}
+#manualqw,#acquireqw{
+    display: inline-block;
+    width: 195px;
+    height: 34px;
+    border-radius: 3px;
+    background: rgb(124, 125, 128);
+    margin-left: 20px;
+    text-align: center;
+    line-height: 34px;
+    color: #fff;
+    cursor: pointer;
+}

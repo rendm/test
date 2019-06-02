@@ -1,0 +1,125 @@
+
+
+.layui-col-md4{
+    overflow-y: scroll;
+}
+.grid-demo{padding: 10px; line-height: 30px; text-align: left;}
+.text2{padding: 10px; line-height: 40px; text-align: left;   margin-left: 20px; font-size: small }
+.text3{padding: 10px; line-height: 40px; text-align: left;}
+.fa-exclamation-circle{
+            padding: 0 8px 0 0;
+            position: relati
+}
+.fa-check-circle{
+    padding: 0 8px 0 0;
+    position: relative;
+    color:#1fc344;
+}
+.mydisabled{
+    background-color: #EEEEEE;
+}
+
+label.layui-form-label{
+    padding: 5px;
+    line-height:40px;
+}
+img{
+    width: 95%;
+}
+.layui-form-label{
+    width: 140px;
+}
+#userinfo{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+}
+
+#userinfo{
+    width: 100%;
+    height:auto;
+    transition: margin-top 1s;
+}
+.border-green{
+   color:#1fc344;
+}
+.border-red{
+    color: #ea1f1f;
+}
+.border-blue{
+    color:#1a5eb3
+}
+.border-orange{
+    color:#f18414;
+}
+#btn-performability{
+    box-sizing: border-box;
+    width: 30%;
+    height: 45px;
+    border: 1px solid #1ab394;
+    line-height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    cursor: pointer;
+    color:#1ab394;
+}
+#btn-performability:hover{
+    border: 1px solid #1ab394;
+    background: #1ab394;
+    color:#fff;
+}
+
+
+#btn-service{
+    box-sizing: border-box;
+    width: 30%;
+    height: 45px;
+    border: 1px solid #1ab394;
+    line-height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    cursor: pointer;
+    color:#1ab394;
+}
+#btn-service:hover{
+    border: 1px solid #1ab394;
+    background: #1ab394;
+    color:#fff;
+}
+#btn-accomplish{
+    box-sizing: border-box;
+    width: 30%;
+    height: 45px;
+    border: 1px solid #1ab394;
+    line-height: 45px;
+    border-radius: 3px;
+    padding-left: 20px;
+    cursor: pointer;
+    color:#1ab394;
+}
+#btn-accomplish:hover{
+    border: 1px solid #1ab394;
+    background: #1ab394;
+    color:#fff;
+}
+/* .qwqw{
+    display: none;
+}
+.btn-service-next{
+    display: none;
+}
+.btn-accomplish-next{
+    display: none;
+} */
+#taskSerial{
+    display: none;
+}
+#tasktaskd{
+    display: none;
+}
+#tasktask{
+    display: none;
+}
+#tasktaskf{
+    display: none;
+}

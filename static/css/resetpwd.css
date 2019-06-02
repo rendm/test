@@ -1,0 +1,17 @@
+label.error {
+    display: block;
+    overflow: hidden;
+    padding: 0 8px 0 0;
+    position: relative;
+    color:red;
+}
+#gid{
+    outline: none;
+    border: 1px solid transparent;
+    color:transparent;
+
+}
+
+.red{
+    color: red;
+}

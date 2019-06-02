@@ -1,0 +1,37 @@
+a {
+    color: white;
+}
+#code{
+    background: rgba(255,255,255,.2);
+    width: 140px;
+    display: inline-block;
+    margin: auto;
+    color: white
+}
+#v_container{
+    width: 160px;
+    height: 34px;
+    display:block;
+    float: right;
+    margin: auto;
+}
+.text-center{
+    color: white
+}
+#pwd{
+    color: white;
+}
+#login{
+    display:block;
+    float: right;
+}
+#gain{
+    background: rgba(255,255,255,.2);
+    width: 120px;
+    float: right;
+    height: 34px;
+}
+
+.mt15{
+    margin-top: 15px;
+}

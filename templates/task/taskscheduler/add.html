@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+    <link href="../../../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/fangdajing/iconfont.css">
+    <link rel="stylesheet" href="../../../static/css/packaging.css">
+
+    <link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../static/css/animate.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/task/taskscheduler/add.css">
+
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="basicInfoForm">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="red">*</span>作业名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="jobName" name="jobName" maxlength="40" placeholder="请输入作业名称" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">作业序列名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="taskSerialName" name="taskSerialName" placeholder="请输入作业序列名称" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">机器人名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="robotname" name="robotname" placeholder="请输入机器人名称" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">机器人硬件地址：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="robothardwareno" name="robothardwareno" placeholder="请输入机器人硬件地址" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">corn表达式：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="jobcorn" name="jobcorn" placeholder="请输入corn表达式" disabled />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">corn表达式中文：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="jobcornname" name="jobcornname" placeholder="请输入corn表达式中文" disabled />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">定时配置：</label>
+                            <div class="col-sm-8">
+                                <select name="corntype" id="corntype" lay-filter="myselect" class="form-control ">
+                                    <option value="0">请选择执行类型</option>
+                                    <option value="1">重复执行</option>
+                                    <option value="2">定时执行</option>
+                                    <option value="3">自定义表达式</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="cornform" class="cornform"></div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" id="base_save">添加</button>
+                                <!--<button type="button" class="btn btn-primary" id="cancel">取消</button>-->
+                                <input type="reset" class="btn btn-danger" value="取消" onclick="location.reload()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div ></div>
+
+<!--新js文件bengin-->
+<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.extend.js"></script>
+<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../../../static/js/plugins/layer/layer.js"></script>
+<script src="../../../static/js/content.js?v=1.0.0"></script>
+<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+<script src="../../../static/js/ajax-util.js"></script>
+<script src="../../../static/js/jquery.auto-complete.js"></script>
+<script src="../../../static/js/jquery.treegrid.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+<script type="text/javascript" src="../../../static/js/common/common.js"></script>
+<script src="../../../static/js/packaging.js"></script>
+<!--新js文件end-->
+
+<script src="../../../static/js/share.js"></script>
+<script src="../../../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/js/layui.js"></script>
+<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.data.min.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.js"></script>
+<script src="../../../static/js/plugins/distpicker/distpicker.min.js"></script>
+<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="../../../static/js/plugins/jquery.timepicker/jquery.timepicker.min.js"></script>
+<script src="../../../static/js/task/taskscheduler/CronExpForm.js"></script>
+<script src="../../../static/js/task/taskscheduler/add.js"></script>
+
+</body>
+</html>

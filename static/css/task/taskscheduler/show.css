@@ -1,0 +1,27 @@
+.layui-upload-img {
+    width: 150px;
+    height: 160px;
+    border: 1px solid;
+
+}
+#uploadbtn{
+   margin-left: 24px;
+}
+
+label.layui-form-label
+{
+    width: 150px;
+}
+input.mydisabled
+{
+    background-color: #eeeeee;
+
+}
+.bbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+#btns{
+    margin:10px;
+    text-align: center;
+}

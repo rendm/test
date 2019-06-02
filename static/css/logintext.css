@@ -1,0 +1,27 @@
+html,body{
+    background: transparent;
+}
+div.subnav-banner {
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    width: 400px;
+    margin: 20px auto;
+}
+.subnav-banner .line {
+    display: inline-block;
+    width: 30%;
+    border-top: 1px solid #ccc;
+}
+.subnav-banner .txt {
+    color: #ffffff;
+    vertical-align: -5px;
+    font-size: 12px;
+}
+a {
+    color: white;
+}
+html,body{
+    width: 450px;
+
+}

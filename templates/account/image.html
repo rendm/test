@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head >
+    <link href="../../static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../static/css/plugins/jqTreeGrid/jquery.treegrid.css"
+		  rel="stylesheet">
+	<!--summernote css -->
+	<link href="../../static/css/plugins/summernote/summernote-0.8.8.css"
+		  rel="stylesheet">
+	<link href="../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../static/css/plugins/iCheck/custom.css" />
+	<link rel="stylesheet" href="../../static/css/plugins/cropper/cropper.css" />
+    <link rel="stylesheet" href="../../static/js/plugins/layer/laydate/skins/default/laydate.css" />
+    <link rel="stylesheet" href="../../static/css/image.css">
+
+    <style type="text/css">
+        .ibox-content{
+            height: 640px;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="ibox">
+                <div >
+                    <!--photo_info-->
+                    <div class="ibox-content" id="photo_info">
+                        <div class="ggcontainer" id="crop-avatar">
+                            <form class="avatar-form"  enctype="multipart/form-data" method="post" id="formdataid">
+                                <div class="avatar-body">
+                                    <div class="avatar-upload">
+                                        <!-- <input class="avatar-src" name="avatar_src" type="hidden">
+                                        <input class="avatar-data" name="avatar_data" type="hidden">
+                                        <input class="avatar-input" id="avatarInput" name="avatar_file" type="file"> -->
+                                        <div class="layui-form-item" id="uploadbtn">
+                                            <span class="btn btn-success fileinput-button img-select">
+                                                <span>选择</span>
+                                                <input class="avatar-src" name="avatar_src" type="hidden">
+                                                <input class="avatar-data" name="avatar_data" type="hidden">
+                                                <input id="avatarInput" type="file" class="avatar-input" name="avatar_file" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Crop and preview -->
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="avatar-wrapper"></div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="avatar-preview preview-lg"></div>
+                                            <div class="avatar-preview preview-md"></div>
+                                            <div class="avatar-preview preview-sm"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row avatar-btns">
+                                        <div class="col-md-9 rrotaterrs">
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">左旋转</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="-15" type="button">-15°</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="-30" type="button">-30°</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">-45°</button>
+                                            </div>
+                                            <div class="btn-group">
+                                                <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">右旋转</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="15" type="button">15°</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="30" type="button">30°</button>
+                                                <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">45°</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 rtailorr">
+                                            <button class="btn btn-primary btn-block avatar-save" type="submit">完成裁剪</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Loading state -->
+                            <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->
+	<script src="../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../static/js/ajax-util.js"></script>
+	<script src="../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../static/js/jquery.treegrid.js"></script>
+
+
+	<script src="../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+    <script src="../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script type="text/javascript" src="../../static/js/plugins/iCheck/icheck.min.js"></script>
+	<script type="text/javascript" src="../../static/js/plugins/cropper/cropper.min.js"></script>
+	<script type="text/javascript" src="../../static/js/plugins/layer/laydate/laydate.js" ></script>
+	<script type="text/javascript" src="../../static/js/plugins/distpicker/distpicker.data.min.js"></script>
+	<script type="text/javascript" src="../../static/js/plugins/distpicker/distpicker.min.js"></script>
+    <script  src="../../static/js/appjs/sys/user/gg-bootdo.js"></script>
+    <script src="../../static/js/share.js"></script>
+    <script>
+
+  var CropAvatar_parent={};
+  var mouseWheelZoom_parent=false;
+  var wheel_flag='';
+
+function disabledMouseWheel() {
+  if (document.addEventListener) {
+    document.addEventListener('DOMMouseScroll', scrollFunc, false);
+  }//W3C
+  window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+}
+
+function scrollFunc(evt) {
+  evt = evt || window.event;
+    if(evt.preventDefault) {
+    // Firefox
+      evt.preventDefault();
+      evt.stopPropagation();
+    } else {
+      // IE
+      evt.cancelBubble=true;
+      evt.returnValue = false;
+  }
+  return false;
+  }
+       // action="irobotweb/sys/user/upload/img"
+       $('#formdataid').attr('action',share+'irobotweb/sys/user/upload/img')
+//       console.log($(".cropper-canvas").width(),'cropper-canvas宽')
+//       console.log($(".cropper-drag-box").width(),'cropper-drag-box宽')
+//       console.log($(".cropper-crop-box").width(),'cropper-crop-box宽')
+//       console.log($(".cropper-modal").width(),'cropper-modal宽')
+
+       $(document).on('mousewheel DOMMouseScroll', onMouseScroll);
+            function onMouseScroll(e){
+                e.preventDefault();
+                var wheel = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+                var delta = Math.max(-1, Math.min(1, wheel));
+
+                if(delta<0){//向下滚动
+
+                    var canvas_width=$(".cropper-canvas").width();
+                    var box_width=$(".cropper-crop-box").width();
+                    var canvas_height=$(".cropper-canvas").height();
+                    var box_height=$(".cropper-crop-box").height();
+                    var size_flag=canvas_width<box_width || canvas_height<box_height;
+                     console.info('size_flag='+size_flag);
+
+                    if((wheel_flag=='up') && !mouseWheelZoom_parent){
+                        mouseWheelZoom_parent=true;
+                        CropAvatar_parent.stopCropper();
+                        CropAvatar_parent.startCropper(mouseWheelZoom_parent);
+                    }
+
+                    if(canvas_width<box_width || canvas_height<box_height){
+
+                        layer.msg('已经是最小,再缩小就会上传失败');
+                        CropAvatar_parent.stopCropper();
+                        mouseWheelZoom_parent=false;
+                        CropAvatar_parent.startCropper(false);
+                        wheel_flag='down';
+                        window.onmousewheel = document.onmousewheel=function() {return false}
+                    }
+                }else{//向上滚动
+
+                    var canvas_width=$(".cropper-canvas").width();
+                    var canvas_height=$(".cropper-canvas").height();
+
+                    if((wheel_flag=='down') && !mouseWheelZoom_parent){
+                        mouseWheelZoom_parent=true;
+                        CropAvatar_parent.stopCropper();
+                        CropAvatar_parent.startCropper(mouseWheelZoom_parent);
+                    }
+
+                    if(canvas_width>1000 || canvas_height>600){ //714  400
+                        layer.msg('已经是最大,再放大就会上传失败');
+                        mouseWheelZoom_parent=false;
+                       CropAvatar_parent.stopCropper();
+                       CropAvatar_parent.startCropper(false);
+                        wheel_flag='up';
+                        window.onmousewheel = document.onmousewheel=function() {return false}
+                    }
+                }    
+            }
+
+
+       $('button').click(function () {
+           if (!$("img").length > 0) {
+               layer.msg("请选择图片");
+               return false;
+           }
+       });
+    </script>
+</body>
+</html>

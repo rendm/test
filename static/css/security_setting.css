@@ -1,0 +1,42 @@
+
+        .grid-demo{padding: 10px; line-height: 30px; text-align: left;}
+        .text2{padding: 10px; line-height: 40px; text-align: left;   margin-left: 20px; font-size: small }
+        .text3{padding: 10px; line-height: 40px; text-align: left;}
+        .fa-exclamation-circle{
+                    padding: 0 8px 0 0;
+                    position: relati
+        }
+        .fa-check-circle{
+            padding: 0 8px 0 0;
+            position: relative;
+            color:#1fc344;
+        }
+        .mydisabled{
+            background-color: #EEEEEE;
+        }
+
+        label.layui-form-label{
+            padding: 10px;
+            line-height:40px;
+        }
+        img{
+            width: 95%;
+        }
+
+ .fa-exclamation-circle{
+     color:#f59e3d;
+ }
+ #userinfotwo{
+     display: none;
+ }
+ #create{
+     width: 130px;
+     /*cursor: pointer;*/
+ }
+ #amphibious{
+    display: none;
+ }
+
+ .cursor{
+     cursor:pointer
+ }

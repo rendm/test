@@ -1,0 +1,9 @@
+.ibox-content{
+    height: 100%;
+}
+.wrapper,.wrapper-content,.row,.col-sm-12,.float-e-margins, {
+    height: 100%;
+}
+#signupForm{
+    height: 80%;
+}

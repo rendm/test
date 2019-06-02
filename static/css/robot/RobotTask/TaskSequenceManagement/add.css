@@ -1,0 +1,8 @@
+.ibox-content{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#container{
+    height: 700px;
+    overflow-y: scroll;
+}

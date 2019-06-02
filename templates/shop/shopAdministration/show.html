@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+    <link href="../../../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+
+    <!--改用新的样式begin-->
+    <link rel="stylesheet" href="../../../static/css/fangdajing/iconfont.css">
+    <link rel="stylesheet" href="../../../static/css/packaging.css">
+    <link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../../static/css/animate.css" rel="stylesheet">
+    <link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../../static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <!--改用新的样式end-->
+
+    <link rel="stylesheet" href="../../../static/css/shop/shopAdministration/show.css">
+
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="basicInfoForm">
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">店铺id：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="shopId" name="shopId" disabled/>
+                            </div>
+
+                            <label class="col-sm-2 control-label">店铺名称：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="shopName" name="shopName" disabled/>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+
+                            <label class="col-sm-2 control-label">店铺联系人：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="shopcontacts" name="shopcontacts" disabled/>
+                            </div>
+
+                            <label class="col-sm-2 control-label">店铺联系人手机：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="mobile" name="mobile" disabled/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+
+                            <label class="col-sm-2 control-label">店铺联系人邮箱：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="email" name="email" disabled/>
+                            </div>
+
+                            <label class="col-sm-2 control-label">店铺座机：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="phone" name="phone" disabled/>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label class="col-sm-2 control-label">店铺地址：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="address" name="address" disabled/>
+                            </div>
+                            <label class="col-sm-2 control-label">主营业务：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="industry" name="industry" disabled/>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label class="col-sm-2 control-label">所属用户：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="shopmanager" name="shopmanager" disabled/>
+                            </div>
+
+                            <label class="col-sm-2 control-label">所属开发者：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="deviceDeveloperId" name="deviceDeveloperId" disabled/>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">所在地区：</label>
+
+                            <div class="col-md-8" data-toggle="distpicker"  id="datogg">
+                                <div class="col-sm-4" style="padding: 0px;">
+                                    <select   class="form-control" id="provinceName" name="provinceName" disabled></select>
+                                </div>
+                                <div class="col-sm-4 "style="padding: 0px;">
+                                    <select  class="form-control" id="cityName" name="cityName" disabled></select>
+                                </div>
+                                <div class="col-sm-4 " style="padding: 0px;" >
+                                    <select class="form-control" id="areaName" name="areaName" disabled></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+
+                            <label class="col-sm-2 control-label">状态：</label>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio"name="status" value="1" checked="checked" disabled/>正常
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio"name="status" value="0" disabled/>禁用
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">机器人绑定列表</label>
+                    </div>
+                    <table id="exampleTable" data-mobile-responsive="true"></table>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">店铺管理者列表</label>
+                    </div>
+                    <div>
+                        <table id="shopmanagerTable" data-mobile-responsive="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!--添加新的js文件begin-->
+    <script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+    <script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="../../../static/js/plugins/layer/layer.js"></script>
+    <!--<script src="../../../static/js/content.js?v=1.0.0"></script>-->
+    <script src="../../../static/js/plugins/summernote/summernote.js"></script>
+    <script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+    <script src="../../../static/js/ajax-util.js"></script>
+    <script src="../../../static/js/jquery.auto-complete.js"></script>
+    <script src="../../../static/js/jquery.treegrid.js"></script>
+    <script type="text/javascript" src="../../../static/js/common/common.js"></script>
+    <script src="../../../static/js/packaging.js"></script>
+    <!--添加新的js文件end-->
+
+    <script src="../../../static/js/share.js"></script>
+    <script src="../../../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../static/js/layui.js"></script>
+    <script src="../../../static/js/plugins/distpicker/distpicker.data.min.js"></script>
+    <script src="../../../static/js/plugins/distpicker/distpicker.min.js"></script>
+    <script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+    <script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+    <script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+    <script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="../../../static/js/shop/shopAdministration/show.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+#red{
+    color: red;
+}
+
+.layui-upload-img {
+    width: 150px;
+    height: 160px;
+    border: 1px solid;
+
+}
+#uploadbtn{
+   margin-left: 24px;
+}
+
+label.layui-form-label
+{
+    width: 100px;
+}
+input.mydisabled
+{
+    background-color: #eeeeee;
+}
+
+#browsebg {
+    display: flex;
+}
+
+#file {
+    z-index: 2;
+    opacity: 0;
+}
+
+#filea {
+    width: 54px;
+    height: 34px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 20px;
+    background: #1a7bb9;
+    color: #fff;
+    z-index: 12;
+}
+
+.fileinput-button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .fileinput-button input {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px;
+    }
+
+#aim {
+    width: 300px;
+    height: 34px;
+    border: 1px solid #e5e6e7;
+    border-radius: 2px;
+    padding-left: 10px;
+}

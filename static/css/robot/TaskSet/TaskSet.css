@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper,#box{
+    width: 100%;
+    height: 100%;
+}
+#topcontentdd{
+    width: 100%;
+    height: auto;
+}
+#elude{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding:0 12px;
+}
+#selectmap{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding:0 15px;
+}
+.mapname{
+    color: #1ab394;
+    cursor: pointer;
+}
+#mapimgsmall{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 666;
+    cursor: pointer;
+}
+#smallmap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#smallmap img{
+    width: 250px;
+}
+#sort-btn{
+    width:100%;
+    height: 40px;
+    /* padding-left:52px;
+    padding-right: 57px; */
+    box-sizing: border-box;
+    margin-top:3px;
+}
+.spanbtn{
+    padding-left: 50px;
+    width:100%;
+    height: 100%;
+    border-bottom:2px solid #ccc;
+   
+}
+.spanbtn span{
+    display: inline-block;
+    width: 110px;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.spanbg{
+    background: #ccc;
+}
+.wrapper-content{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    position: relative;
+}
+#box{
+    flex:1;
+    overflow-y: hidden;
+}
+.themap{
+    width: 88px;
+    height: 34px;
+    background: #1c84c6;
+    border: 1px solid #1c84c6;
+    color: #fff;
+    border-radius: 3px;
+}
+.outer-box{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 666;
+}
+.outer-box-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-content{
+    width: 800px;
+    height: 700px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.imgbx{
+    flex:1;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding:5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.imgbx dl{
+    margin:5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding:5px;
+}
+.imgbx dl dt{
+    width: 230px;
+    height: 130px;
+    text-align: center;
+}
+.imgbx dl dt img{
+    width: auto;
+    height: 100%;
+}
+.imgbx dl dd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 选择 */
+.selectsmallap{
+    display: inline-block;
+    background: #64b8f0;
+    width: 50px;
+    height: 22px;
+    text-align:center;
+    line-height: 22px;
+    color:#fff;
+    border-radius: 10px;
+}
+.btn-su{
+    width: 100%;
+    height: 45px;
+    text-align: right;
+    line-height:45px;
+    background: #eee;
+}
+.btn-su button{
+    width: 54px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    color:#fff;
+    margin-right:20px;
+}
+.confirmbtn{
+    background-color: #1ab394;
+    border:1px solid #1ab394;
+    border-radius:3px;
+}
+.cancelbtn{
+    background-color: #ec4758;
+    border:1px solid #ec4758;
+    border-radius:3px;
+}
+.selectmapbg{
+    background:rgba(135, 205, 250,0.23);
+}
+
+
+.dropdown-menu-new {
+    border: medium none;
+    display: none;
+    float: left;
+    font-size: 15px;
+    list-style: none outside none;
+    padding: 0;
+    text-shadow: none;
+    z-index: 1000;
+    border-radius: 0;
+    box-shadow: 0 0 3px rgba(86, 96, 117, 0.3);
+    background-color: #18a689;
+    border-color: #18a689;
+    color: #FFFFFF;
+}
+
+#base{
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding-left: 12px;
+}
+#settaskset{
+    box-sizing: border-box;
+    padding: 3px 10px;
+}
+#timingtasktiming{
+    box-sizing: border-box;
+    padding: 3px 10px;
+}
+#content-show{
+    width: auto;
+    height: auto;
+    display: none;
+}
+/* 没有选择地图提示页面 */
+#select-map{
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+}
+#select-layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#select-btn-m{
+    width: 168px;
+    height: 34px;
+    background: #1ab394;
+    font-size: 14px;
+    color:#fff;
+    border-radius: 3px;
+    border:1px solid #1ab394;
+    margin-top:14px;
+}
+/* 机器人任务展示 */
+#task_show-robot{
+    width: 100%;
+    height: 150px
+}
+#task_module{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* element.style {
+    height: 432px;
+    padding-bottom: 20px;
+} */

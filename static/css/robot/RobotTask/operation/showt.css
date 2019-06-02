@@ -1,0 +1,28 @@
+#execution-s{
+    width: auto;
+    height: auto;
+}
+
+#execution-s p{
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border:1px solid #18a0b7;
+    border-radius: 3px;
+    color: #18a0b7;
+}
+
+#execution-s .imgs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fixed-table-container{
+    width:40%;
+}
+.fixed-table-pagination{
+    display: none;
+    color: transparent;
+}

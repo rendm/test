@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<meta charset="utf-8">
+<head >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link href="../../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+	<link href="../../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../static/css/style.css">
+    <link rel="stylesheet" href="../../../../static/css/layui.css">
+    <link rel="stylesheet" href="../../../../static/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../static/css/robot/RobotTask/operation/operation.css">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+			<div class="col-sm-12">
+                <div id="base" class="fixed-table-toolbar" style="padding-top: 20px; ">
+					<ul id="myTab" class="nav nav-tabs">
+						<li distinction="one" class="active"><a href="#qwqw" data-toggle="tab" id="ones">可运行的任务序列</a></li>
+						<li distinction="two" ><a href="#btn-service-next" data-toggle="tab" id="twos">运行中的任务</a></li>
+						<li distinction="three" ><a href="#btn-accomplish-next" data-toggle="tab" id="threes">已完成的任务</a></li>
+					</ul>
+                    <div id="userinfo"  class="layui-container1" style="margin-bottom: 30px" >
+                            <div class="layui-form-item layui-col-md4" id="taskSerial">
+                                <div class="layui-col-md3">
+                                	<label class="layui-form-label">任务序列名称：</label>
+                                </div>
+                                <div class="layui-col-md7" style="padding: 10px;">
+                                    <input type="text" id="taskSerialName" name="taskSerialName"  autocomplete="off"    class="layui-input mydisabled" placeholder="任务序列名称">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-col-md4 " id="tasktask" >
+                                <div class="layui-col-md3">
+                                <label class="layui-form-label">任务名称：</label>
+                                </div>
+                                <div class="layui-col-md7" style="padding: 10px;">
+                                    <input type="text" id="taskname" name="taskname" autocomplete="off"  class="layui-input mydisabled" placeholder="任务名称">
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-col-md4 " id="tasktaskd">
+								<div class="layui-col-md3">
+								<label class="layui-form-label">机器人硬件地址：</label>
+								</div>
+								<div class="layui-col-md7" style="padding: 10px;">
+									<input type="text" id="robothardwareno" name="robothardwareno" autocomplete="off"  class="layui-input mydisabled" placeholder="机器人硬件地址">
+								</div>
+							</div>
+							<div class="layui-form-item layui-col-md4 " id="tasktaskf">
+								<div class="layui-col-md3">
+								<label class="layui-form-label">机器人名称：</label>
+								</div>
+								<div class="layui-col-md7" style="padding: 10px;">
+									<input type="text" id="robotName" name="robotName" autocomplete="off"  class="layui-input mydisabled" placeholder="机器人名称">
+								</div>
+							</div>
+							<div class="columns pull-right">
+								<button  type="button"
+								class="btn  btn-primary" id="checkbtnreload">
+								<i class="fa fa-plus hidden" aria-hidden="true"></i>提交
+							</button>
+							<button  type="button" class="btn  btn-primary" id="btnreset">
+								<i class="fa fa-plus hidden" aria-hidden="true"></i>重置
+							</button>
+							</div> 
+                    </div>
+                </div>
+				<div class="ibox">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="qwqw">
+							<table id="exampleTable" data-mobile-responsive="true">
+							</table>
+						</div>
+						<div class="tab-pane fade" id="btn-service-next">
+							<table id="serviceTable" data-mobile-responsive="true">
+							</table>
+						</div>
+						<div class="tab-pane fade" id="btn-accomplish-next">
+							<table id="accomplishTable" data-mobile-responsive="true">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--shiro控制bootstraptable行内按钮看见性 来自bootdo的创新方案 -->
+	</div>
+	<script src="../../../../static/js/share.js"></script>
+	<script src="../../../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->  
+	<script src="../../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>  
+	<script src="../../../../static/js/ajax-util.js"></script>
+	<script src="../../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../../static/js/jquery.treegrid.js"></script>
+	<script src="../../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+	<script src="../../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script src="../../../../static/js/robot/RobotTask/operation/operation.js"></script>
+	<script></script>
+</body>
+</html>

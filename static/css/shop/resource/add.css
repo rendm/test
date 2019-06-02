@@ -1,0 +1,60 @@
+.red{
+    color: red;
+}
+#browsebg{
+    display: flex;
+}
+
+#browsebg{
+    display: flex;
+}
+#file{
+    z-index:2;
+    opacity:0;
+    margin:0;
+    cursor: pointer;
+}
+
+#filea{
+    width: 10%;
+    height: 34px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 5%;
+    background: #1a7bb9;
+    color:#fff;
+    z-index:12;
+}
+
+.fileinput-button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.fileinput-button input{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+}
+#aim{
+    width: 85%;
+    height:34px;
+    border: 1px solid #e5e6e7;
+    border-radius:2px;
+    padding-left:10px;
+}
+
+.ibox-content{
+    height: 400px;
+}
+#type_desc{
+    display: inline-block;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #666;
+}

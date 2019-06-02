@@ -1,0 +1,56 @@
+div.subnav-banner {
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    width: 400px;
+    margin: 20px auto;
+}
+#heights{
+    height: 500px;
+}
+.subnav-banner .line {
+    display: inline-block;
+    width: 30%;
+    border-top: 1px solid #ccc;
+}
+
+.subnav-banner .txt {
+    color: #ffffff;
+    vertical-align: -5px;
+    font-size: 12px;
+}
+#iframepage{
+    width: 500px;
+}
+
+#login-footerdd{
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    /*border: 1px solid red;*/
+    /* color:rgba(250, 250, 250, 0.6); */
+    color: #9a9a9a;
+    font-size: 14px;
+    position: absolute;
+    bottom:25px;
+}
+
+#safety{
+display: inline-block;
+width: 14px;
+height: 16px;
+margin-right: 6px;
+background: url(https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superlanding/img/icon_police_2763990.png?v=md5) 0 0 no-repeat;
+vertical-align: middle;
+margin-top: -4px;
+}
+
+*{ moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none; }
+body,html{
+    height: 1080px;
+}
+
+.layui-layer-shade{
+    background:transparent;
+}

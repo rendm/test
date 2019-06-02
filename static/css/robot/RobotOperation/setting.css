@@ -1,0 +1,149 @@
+#type_desc{
+    display: inline-block;
+    padding-top: 6px;
+    font-size: 8px;
+    color: #666;
+}
+
+.chooseBtn {
+    display: none;
+}
+.choose-label {
+    box-shadow: #ccc 0px 0px 0px 1px;
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    background-color: #bdbdbd;
+    overflow: hidden;
+}
+.choose-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: 20;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.chooseBtn:checked + label.choose-label:before {
+    left: 20px;
+}
+
+.chooseBtn:checked + label.choose-label {
+    background-color: #1ab394;
+}
+#borderccc{
+    border:1px solid #ccc;
+}
+
+#seekResource{
+    width: 65px;
+    height: 27px;
+    font-size: 10px;
+    text-align: center;
+    padding: 4px 5px;;
+    margin-top: 10px;
+    background: #1a7bb9;
+    color: #fff;
+    border: 1px solid #1a7bb9;
+    border-radius: 3px;
+    
+}
+#settingid{
+width: 100%;
+height: 100%;
+position: relative;
+}
+#shaderesource{
+z-index: 666;
+display: none;
+width: 100%;
+height: 100%;
+position: absolute;
+left:0;
+top: 0;
+background: rgba(0, 0, 0, 0.3);
+}
+#resourcribox{
+margin:60px auto;
+width: 660px;
+height: 450px;
+background: #fff;
+box-sizing: border-box;
+padding:0 20px;
+border-radius: 3px;
+}
+#resourcebottom{
+    width: 100%;
+    height: 60px;
+    text-align: right; 
+    
+}
+.filenamespan{
+display: inline-block;
+font-size: 10px;
+padding:2px 3px;
+border:1px solid #ccc;
+border-radius:3px;
+margin-top:4px;
+}
+.filenamespan small{
+display: inline-block;
+width: 14px;
+height: 14px;;
+text-align: center;
+line-height: 14px;
+cursor: pointer;
+border-radius:50px;
+background: #eee;
+margin-right:1px;
+}
+.filenamespan small:hover{
+background: #ccc; 
+}
+#BigSc{
+background:rgba(238, 238, 238, 0.3);
+border-radius:7px;
+width:450px;
+height:34px;
+border:1px solid #ccc;
+box-sizing: border-box;
+padding:0 5px;
+overflow: hidden;
+ text-overflow:ellipsis; 
+white-space: nowrap;
+}
+.pull-right.pagination-detail{
+display:none;
+} 
+
+.findlabel{
+    font-weight: 500;
+}
+
+#resourcebtndel{
+    width: 53px;
+    height: 34px;
+    background: #1ab394;
+    border-radius: 3px;
+    border:1px solid #1ab394;
+    color: #fff;
+}
+#resourcedanger{
+    width: 53px;
+    height: 34px;
+    background: #ec4758;
+    border-radius: 3px;
+    border:1px solid #ec4758;
+    color: #fff;
+}
+.red{
+    color: red;
+}

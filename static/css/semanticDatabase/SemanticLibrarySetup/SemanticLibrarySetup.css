@@ -1,0 +1,132 @@
+html,body,#box{
+    width: 100%;
+    height: 100%;;
+    overflow: hidden;
+}
+#box{
+    overflow: hidden;
+}
+#contentt{
+    width: 100%;
+    height: 100%;
+}
+/* 有数据 */
+#detailsCircumscribe{
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+    box-sizing: border-box;
+    padding: 28px 0px 28px 30px;;
+}
+#detailsCircumscribe-center{
+    width:100%;
+    height: 100%;
+    /* overflow-y: scroll; */
+}
+#augmentbtn{
+    width: 54px;
+    height: 34px;
+    text-align: center;
+    line-height: 35px;
+    background: #1ab394;
+    color: #fff;
+    border:1px solid #1ab394;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 17px;
+    cursor:pointer;
+
+
+}
+#centerconter{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-bottom:50px;
+}
+.lump{
+    width: 520px;
+    height: 220px;
+    background: #fff;
+    box-shadow: 1px 1px 7px #e0e0e1;
+   
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.lump-top{
+    width:520px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f8fc;
+    
+}
+.lump-top b{
+    color:#666666;
+}
+.lookshowdd{
+    color: #3bbda3;
+    cursor: pointer;
+}
+.delll{
+    color:#ed5666;
+    cursor: pointer;
+}
+.lump-content{
+    width: 520px;
+    height: 160px;
+    box-sizing: border-box;
+    padding:0 18px;
+    
+    margin-top: 20px;
+    
+
+}
+.describe{
+    width: 100%;
+    height: 116px;;
+    border-bottom:1px solid #e5e6e7;
+}
+.describe p{
+    color:#999;
+    font-size: 12px;
+}
+.footer{
+    font-size: 12px;
+    color: #333;
+}
+.number-fo{
+    color: #1ab394;
+}
+/* 没有数据 */
+#EmptyData-center{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#EmptyData{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#add{
+    width: 168px;
+    height: 34px;
+    background: #1ab394;
+    color: #fff;
+    font-size: 14px;
+    border:1px solid #1ab394;
+    margin:33px 0;
+    border:3px;
+}

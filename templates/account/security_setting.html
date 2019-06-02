@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+    <!--<link href="../../static/css/font-awesome/font-awesome.min.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">-->
+    <!--<link href="../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="../../static/css/bootstrap/table/bootstrap-table.css">-->
+    <!--<link href="../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/animate.css"  rel="stylesheet">-->
+    <!--<link href="../../static/css/plugins/chosen/chosen.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/style.css?v=4.1.0"  rel="stylesheet">-->
+    <!--<link href="../../static/js/jquery.auto-complete.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/jquery.treegrid.min.css" rel="stylesheet">-->
+    <!--<link href="../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="../../static/css/packaging.css">-->
+    <!--<link rel="stylesheet" href="../../static/css/layui.css"  media="all">-->
+    <!--<link rel="stylesheet" href="../../static/css/style.css">-->
+
+    <link href="../../static/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/layui.css"  media="all">
+    <link href="../../static/css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="../../static/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/bootstrap/table/bootstrap-table.css">
+    <link href="../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <link href="../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+    <link href="../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+    <link href="../../static/css/animate.css"  rel="stylesheet">
+    <link href="../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+    <link href="../../static/js/jquery.auto-complete.css" rel="stylesheet">
+    <link href="../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/packaging.css">
+
+    <link rel="stylesheet" href="../../static/css/security_setting.css">
+
+
+    <style>
+        .height780{
+            height: 780px;
+        }
+
+        .height750{
+            height: 750px;
+        }
+
+        .margin20{
+            margin: 20px;
+        }
+
+       .base-s{
+           padding-top: 40px; padding-left: 20px;display: flex;justify-content: space-between;
+       }
+
+        .userinfo-s{
+            margin-left: 30px;margin-bottom: 30px
+        }
+
+        .lh60{
+            line-height: 60px;
+        }
+
+    </style>
+</head>
+<body class="gray-bg">
+
+
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content" style="height: 750px;">
+                    <form class="form-horizontal m-t" id="signupForm" autocomplete="off">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">登录账号</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="username" name="username" autocomplete="off" class="form-control mydisabled" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">用户ID</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="uerid" name="uerid" autocomplete="off" class="form-control mydisabled" disabled>
+                            </div>
+                        </div>
+
+                        <div id="userinfotwo">
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">ClientId</label>
+                                <div class="col-sm-4">
+                                    <input type="text" id="ClientId" name="ClientId" autocomplete="off" value=""
+                                            class="form-control mydisabled" disabled>
+                                    <!--style="background:#fff;outline: none;border:0;"-->
+                                    <!--<span id="ClientId"></span>-->
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">ClientSecret</label>
+                                <div class="col-sm-4">
+                                    <input type="text" id="ClientSecret" name="ClientSecret" autocomplete="off" value="" class="form-control mydisabled" disabled>
+                                    <!--<span id="ClientSecret"></span>-->
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="settings">
+                            <hr class="layui-bg-black" style="margin: 10px">
+
+                            <div id="u108" class="form-group lh60">
+                                <label class="col-sm-3 control-label">密码重置</label>
+                                <label class="col-sm-5 control-label" style="text-align: left">安全性高的密码可以使帐号更安全。建议您定期更换密码，设置一个长度超过6位的密码.</label>
+
+
+                                <!--<div class="col-sm-2 col-md-offset-2">-->
+                                    <!--<div>-->
+                                        <!--<i class="fa fa-check-circle"></i>-->
+                                        <!--<span>已设置</span>-->
+                                        <!--<span>|</span>-->
+                                        <!--<span>-->
+                                            <!--<a style='color: blue;' href="./resetpwd.html">修改</a>-->
+                                        <!--</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<label class="col-sm-2 control-label" style="text-align: left">-->
+                                    <!--<i class="fa fa-check-circle"></i>-->
+                                    <!--<span>已设置|</span>-->
+                                    <!--&lt;!&ndash;<span>|</span>&ndash;&gt;-->
+                                    <!--<span>-->
+                                        <!--<a style='color: blue;' href="./resetpwd.html">修改</a>-->
+                                        <!--</span>-->
+                                <!--</label>-->
+
+                                <label class="col-sm-2 control-label" id="changepwd" style="text-align: left"></label>
+
+                            </div>
+
+                            <hr class="layui-bg-gray" style="margin: 10px">
+
+                            <div id="u110" class="form-group lh60">
+                                <label class="col-sm-3 control-label">手机绑定</label>
+                                <label class="col-sm-5 control-label" id="phone" style="text-align: left"></label>
+                                <label class="col-sm-2 control-label" id="changephone" style="text-align: left"></label>
+                            </div>
+
+                            <hr class="layui-bg-gray" style="margin: 10px">
+
+                            <div id="u112" class="form-group lh60">
+
+                                <label class="col-sm-3 control-label">邮箱绑定</label>
+                                <label class="col-sm-5 control-label" id="email" style="text-align: left"></label>
+                                <label class="col-sm-2 control-label" id="changeemail" style="text-align: left"></label>
+
+                                <!--<div class="layui-col-md1">-->
+                                    <!--<label class="layui-form-label">邮箱绑定</label>-->
+                                <!--</div>-->
+                                <!--<div id="u125" class="layui-col-md8 ">-->
+                                    <!--<div class="text2" id="email"></div>-->
+                                <!--</div>-->
+                                <!--<div class="layui-col-md2 layui-col-md-offset1">-->
+                                    <!--<div class="text3" id="changeemail">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                            </div>
+
+                            <hr class="layui-bg-gray" style="margin: 10px">
+
+                            <div id="u114" class="form-group">
+                                <label class="col-sm-3 control-label">创建AccessKey</label>
+                                <label class="col-sm-5 control-label" style="text-align: left">AccessKey ID和AccessKey Secret是您访问英特雷真API的密钥，具有该账户完全的权限，请您妥善保管。</label>
+
+                                <!--<div class="layui-col-md1">-->
+                                    <!--<label class="esAccessKey">创建AccessKey</label>-->
+                                <!--</div>-->
+
+                                <!--<div id="u125" class="layui-col-md8 ">-->
+                                    <!--<div class="text2" id="clientid">-->
+                                        <!--AccessKey ID和AccessKey Secret是您访问英特雷真API的密钥，具有该账户完全的权限，请您妥善保管。-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<div class="col-sm-2 col-md-offset-2">-->
+                                    <!--<div class="text3" id="changeclientid">-->
+                                        <!--<div id="create">-->
+                                            <!--<i class="fa fa-exclamation-circle"></i>-->
+                                            <!--<span class="s-create">实名认证后可创建</span>-->
+                                        <!--</div>-->
+                                        <!--<div id="amphibious">-->
+                                            <!--<div>-->
+                                                <!--<i class="fa fa-check-circle"></i>-->
+                                                <!--<span>-->
+                                                  <!--<span id="status" style="cursor:pointer" style='color: blue;'>禁用</span>-->
+                                                <!--</span>-->
+                                                <!--<span>|</span>-->
+                                                <!--<span><span id="del" style='color: blue;cursor:pointer'>删除</span></span>-->
+                                            <!--</div>-->
+
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <label class="col-sm-2 control-label" style="text-align: left">
+                                    <i class="fa fa-exclamation-circle create"></i>
+                                    <span class="create" style="cursor: pointer;">实名认证后可创建</span>
+                                    <i class="fa fa-check-circle amphibious"></i>
+                                    <span id="status" class="amphibious" style="cursor:pointer;color: blue;">禁用</span>
+                                    <span class="amphibious">|</span>
+                                    <span id="del" class="amphibious" style='color: blue;cursor:pointer'>删除</span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<script src="../../static/js/share.js"></script>
+<script src="../../static/js/jquery.min.js"></script>
+<script src="../../static/js/layui.js" charset="utf-8"></script>
+<script src='../../static/js/share.js'></script>
+<script src="../../static/js/security_setting.js"></script>
+
+</body>
+</html>

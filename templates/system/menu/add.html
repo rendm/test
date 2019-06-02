@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+		<link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">  
+	<link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+	<link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/fangdajing/iconfont.css">
+	<link rel="stylesheet" href="../../../static/css/packaging.css">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content" style="height: 640px;">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input id="" name="parentId" value="0" class="form-control"  type="hidden">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">上级菜单：</label>
+								<div class="col-sm-8">
+									<input id="" name="" value="xixiha1" class="form-control" type="text" readonly>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">菜单类型：</label>
+								<div class="col-sm-8">
+									<label class="radio-inline"> <input type="radio"  checked='checked'
+										name="type" value="0" /> 目录
+									</label> <label class="radio-inline"> <input type="radio"
+										name="type" value="1" /> 菜单
+									</label> <label class="radio-inline"> <input type="radio"
+										name="type" value="2" /> 按钮
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">菜单名称：</label>
+								<div class="col-sm-8">
+									<input id="name" name="name" class="form-control" type="text" maxlength="20">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">链接地址：</label>
+								<div class="col-sm-8">
+									<input id="url" name="url" class="form-control" type="text" placeholder="例如: /aa/bb/cc.html">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">权限标识：</label>
+								<div class="col-sm-8">
+									<input id="perms" name="perms" class="form-control" type="text"  placeholder="例如: aa:bb:cc">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">排序号：</label>
+								<div class="col-sm-8">
+									<input id="orderNum" name="orderNum" class="form-control"
+										type="number" placeholder="只能输入有效的数字">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">图标：</label>
+								<div class="col-sm-6">
+									<input id="icon" name="icon" class="form-control" type="text"
+										placeholder="例如：fa fa-circle-o" disabled>
+								</div>
+								<input id="ico-btn" class="btn btn-warning" type="button" value="选择图标">
+							</div>
+
+
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button   id="menusave" class="btn btn-primary">保存</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../../static/js/share.js"></script>
+	<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->
+	<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../../static/js/ajax-util.js"></script>
+	<script src="../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>
+	<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script type="text/javascript" src="../../../static/js/common/common.js"></script>
+	<script src="../../../static/js/packaging.js"></script>
+	<script src="../../../static/js/appjs/sys/menu/add.js"></script>
+	<!-- <script src="../../../public/FontIcoList.html"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>英特雷真</title>
+    <meta name="keywords" content="BootDo管理系统">
+    <meta name="description" content="BootDo管理系统">
+    <link href="./static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="./static/css/animate.css" rel="stylesheet">
+    <link href="./static/css/style.css" rel="stylesheet">
+    <link href="./static/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/privatelogin.css">
+    <link rel="stylesheet" href="./static/css/particlesstyle.css">
+    <link rel="shortcut icon" href="./static/img/favicon.ico"> 
+    
+</head>
+<body>
+<div class="signin">
+    <div class="signinpanel">
+        <div class="row">
+            <div id="beyonddom">
+                <img src="./static/img/logo.png" alt="">
+                <span>客服电话：&nbsp;+86&nbsp;-0512 - 87817680</span>
+            </div>
+            <div class="col-sm-6" id="textti">
+                <div class="signin-info">
+                    <span>智能服务,无限可能。</span>
+                    <label for="" id="gaplabel"></label>
+                    <h1>智能科技改变生活</h1> 
+                </div>
+            </div>
+            <!-- 嵌套登录框 --> 
+            <div class="col-sm-6" id="heights">
+                <iframe id ="iframepage" src="./templates/logintest.html"  scrolling="no" frameborder="0" allowtransparency="true" onLoad="iFrameHeight()"></iframe>
+            </div>
+        </div>
+    </div>
+    <label id="login-footerdd">
+            <span onselectstart="return false">苏ICP备18020360号© 2018 INTG. All Rights Reserved.</span><br>
+            <span onselectstart="return false"><i id="safety"></i> 苏公网安备 32050702010379号</span>
+    </label>
+</div>
+<div class="poabimg">
+    <img src="./static/img/loginpage.png" alt="">
+    <div id="particles-js"></div>
+</div>
+
+<!-- 全局js -->   
+<script src="./static/js/share.js"></script> 
+<script src="./static/js/jquery.min.js?v=2.1.4" ></script>
+<script src="./static/js/bootstrap.min.js?v=3.3.6" ></script>
+<script src="./static/js/plugins/layer/layer.js"></script>
+<script src="./static/js/plugins/layer/layer.min.js"></script>
+<!-- 自定义js -->
+<script src="./static/js/content.js?v=1.0.0"></script>
+<!-- jQuery Validation plugin javascript-->
+<script src="./static/js/ajax-util.js"></script>
+<script src="./static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="./static/js/plugins/validate/messages_zh.min.js"></script>
+<script src="./static/js/appjs/common/image.js" ></script>
+
+<script src="./static/js/common/common.js"></script>
+<script src="./static/js/login.js"></script>
+<script src="./static/js/particles/particles.js"></script>
+<script src="./static/js/particles/app.js"></script>
+<script src="./static/js/particles/stats.js"></script>
+ <script>
+     //鼠标划入
+     $("#imgbox").on('mouseover',function(){
+         $(".img").attr('src','./img/imgname.jpe')
+     })
+     $("#imgbox").on('mouseout',function(){
+         $(".img").attr('src','./img/imgname.jpe')
+     })
+     
+     function disabledMouseWheel(){
+        if (document.addEventListener){
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }//W3C
+        window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+        }
+        function scrollFunc(evt){
+        evt = evt || window.event;
+            if(evt.preventDefault){ 
+            // Firefox
+            evt.preventDefault(); 
+            evt.stopPropagation();
+            } else {
+            // IE
+            evt.cancelBubble=true;
+            evt.returnValue = false;
+        }
+        return false;
+        }
+    window.onload=disabledMouseWheel;
+ </script>
+
+</body>

@@ -1,0 +1,472 @@
+.wrapper-content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.scheme_name,.robot_name{
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+.scheme_name div,.robot_name div{
+    flex:1;
+}
+#box_table{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+#box_table-le .hint-text{
+    width: 100px;
+    height: 50px;
+    text-align: right;
+    line-height: 50px;
+}
+#box_table-le input,#box_table-le select{
+    margin-left: 15px;
+    width: 550px;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #e5e6e7;
+    padding-left: 10px;
+}
+#box_table-ri{
+    display: flex;
+    align-items: center;
+    /*margin-left:117px;*/
+    height: 50px;
+}
+#box_table-ri input{
+    cursor: pointer;
+    margin-right: 5px;
+}
+#box_table-ri .hint-text{
+    padding-right: 20px;
+    padding-left: 65px;
+}
+/* 所有数据保存 */
+#overallSave{
+    width:200px;
+}
+#box_lrcontent{
+    width: 100%;
+    height:auto;
+}
+#con_appear{
+    width: 100%;
+    height: 480px;
+    display: flex;
+}
+#con_addbtn{
+    margin:5px 0;
+}
+/* left */
+#con_al{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+}
+#con_al-details{
+    flex:1;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+#con_al-btn{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* right */
+#con_ar{
+    width: 60%;
+    height: 100%;
+}
+#con_ar-conter{
+    width: 100%;
+    height: 100%;
+}
+#con_ar-conter-top{
+    width: 100%;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ccc;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.title-text{
+    color: #222;
+    font-size: 13px;
+}
+.title-icon{
+    display: inline-block;
+    display: flex;
+}
+.title-icon small{
+    margin: 0 3px;
+    cursor: pointer;
+    color: #fff;
+}
+/* 新建 修改 */
+#con_ar-conter-centre{
+    width: 100%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+}
+#type-time{
+    width: 98%;
+    height: 50px;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 12px;
+    border-bottom:1px solid #ccc;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+.task-type_select{
+    width: 38%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+#selecttype-task{
+    width: 130px;
+    height: 25px;
+    border-radius: 3px;
+}
+.task-type_select span,.task_form-end span{
+    margin-right: 6px;
+}
+.form-time,.end-time{
+    display: flex;
+    align-items: center;
+}
+.form-group{
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+#f-time-h{
+    width: 60px;
+    height: 25px;
+    border-radius: 3px;
+}
+#e-time-h{
+    width: 60px;
+    height: 25px;
+    border-radius: 3px;
+}
+.task_form-end{
+    width: 62%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+#con_ar-conter-centre-smallbox{
+    width: 100%;
+    height: 420px;
+    overflow-y: scroll;
+}
+#timing-task_new{
+    margin-left:10px;
+
+    width: 550px;
+    height: 40px;
+    font-size: 12px;
+}
+
+.task_new-title{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.twosm{
+    display: flex;
+}
+.irandom,.i_s{
+    font-size: 12px;
+    height: 23px;
+    border:1px solid #ccc;
+    margin:0 5px;
+    padding:0 7px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* 新建  修改 */
+#timing-task_details{
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    overflow-y: scroll;
+}
+
+.ne_content{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ne-fshang,.ne-fxia,.ne-del{
+    width: 20px;
+    height: 20px;
+    display: inline;
+    cursor: pointer;
+    border:1px solid #666;
+    background: #ccc;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 20px;
+}
+.ne-lo small{
+    margin:0 5px;
+}
+/*  */
+#okbtn{
+    text-align: right;
+}
+/* 详情 */
+/* #timing-task-content_show{
+    flex:1;
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+    overflow-y: scroll;
+} */
+/* <!-- 详情 --> */
+#timing-task-content_show{
+    widows: 100%;
+    height: 450px;;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.show_time-content{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+
+}
+.ttable{
+    margin-left: 10px;
+}
+.show_time-content span{
+    width: 100%;
+    height: 25px;;
+    line-height: 25px;
+}
+.show_content-content{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+.header-title-text{
+    width: 100%;
+    height: 40px;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+.advertising-list{
+    font-size: 13px;
+}
+.show-list_content{
+    flex: 1;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding:0 10px;
+}
+.show-list_content-li{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+.show-list_content-li span{
+    margin-left:10px;
+    font-size: 13px;
+}
+#show-random_btn{
+    font-size: 12px;
+    height: 23px;
+    border:1px solid #ccc;
+    margin:0 5px;
+    padding:0 7px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* 列表弹层 */
+#absolute-list{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+#absolute-list-content{
+    border-radius: 3px;
+    margin:60px auto;
+    width: 400px;
+    height: 430px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#absolutebtn{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-top:30px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+#absolute-cf,#absolute-cc{
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+}
+#span-hide{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+#span-hide span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#absolute-cf{
+    width: 54px;
+    height: 30px;
+    background: #ed5565;
+    text-align: center;
+    line-height: 30px;
+    border:1px solid #ed5565;
+    color: #fff;
+    border-radius: 3px;
+}
+#absolute-cc{
+    width: 54px;
+    height: 30px;
+    background: #428bca;
+    text-align: center;
+    line-height: 30px;
+    border:1px solid #428bca;
+    color: #fff;
+    border-radius: 3px;
+}
+/* left列表 */
+#timingullist{
+    width: 100%;
+    height: 95%;
+    overflow-y: scroll;
+}
+#timingullist li{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    cursor: pointer;
+}
+#timingullist li span{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+}
+.ti-li-ti{
+    border-right: 1px solid #ccc;
+}
+.listlibg{
+    background-color: #a1cff5;
+
+}
+.listlibg .ti-li-ti{
+    border-color: #fff;
+}
+
+/* 时间样式 */
+.navbar h3 {
+    color: #f5f5f5;
+    margin-top: 14px;
+}
+.hljs-pre {
+    background: #f8f8f8;
+    padding: 3px;
+}
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    padding: 40px 0;
+}
+.input-group {
+    width: 110px;
+    margin-bottom: 10px;
+}
+.pull-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.isRepeat {
+    color: red;
+    text-decoration:line-through;
+
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+@media (max-width: 767px) {
+    .pull-center {
+        float: right;
+    }
+}
+#type-time > div.task_form-end > div.end-time > .form-group{
+    padding-left: 0;
+}
+div.form-group{
+    padding-left: 0;
+}
+#round{
+
+}

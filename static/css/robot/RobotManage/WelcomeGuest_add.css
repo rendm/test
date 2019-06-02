@@ -1,0 +1,74 @@
+.findlabel{
+    font-weight: 500;
+}
+
+.findlabel .seekResource{
+    width: 65px;
+    height: 27px;
+    font-size: 10px;
+    text-align: center;
+    padding: 4px 5px;;
+    margin-top: 10px;
+    background: #1a7bb9;
+    color: #fff;
+    border: 1px solid #1a7bb9;
+    border-radius: 3px;
+
+}
+
+#resourcebottom{
+    width: 100%;
+    height: 60px;
+    text-align: right;
+    margin-top: -40px;
+
+}
+
+#resourcebtndel{
+    width: 53px;
+    height: 34px;
+    background: #1ab394;
+    border-radius: 3px;
+    border:1px solid #1ab394;
+    color: #fff;
+}
+#resourcedanger{
+    width: 53px;
+    height: 34px;
+    background: #ec4758;
+    border-radius: 3px;
+    border:1px solid #ec4758;
+    color: #fff;
+}
+
+#resourcribox{
+    margin:60px auto;
+    width: 660px;
+    height: 450px;
+    background: #fff;
+    box-sizing: border-box;
+    padding:0 20px;
+    border-radius: 3px;
+}
+
+#shaderesource{
+    z-index: 666;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.red{
+    color: red;
+}
+
+.delayTime{
+    width: 96%;
+    height: 32px;
+    border:1px solid #e5e6e7;
+		background: #fff;
+}

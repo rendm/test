@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<meta charset="utf-8">
+<head >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link href="../../../static/css/bootstrap/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+	<link href="../../../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+	<link rel="stylesheet" href="../../../static/css/bootstrap/table/bootstrap-table.css">
+	<link href="../../../static/css/plugins/jsTree/style.min.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/jqTreeGrid/jquery.treegrid.css" rel="stylesheet">
+	<link href="../../../static/css/plugins/summernote/summernote-0.8.8.css" rel="stylesheet">
+	<link href="../../../static/css/animate.css"  rel="stylesheet">
+	<link href="../../../static/css/plugins/chosen/chosen.css" rel="stylesheet">
+   <link href="../../../static/css/style.css?v=4.1.0"  rel="stylesheet">
+	<link href="../../../static/js/jquery.auto-complete.css" rel="stylesheet">
+	<link href="../../../static/css/jquery.treegrid.min.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap/pagejump/bootstrap-table-pagejump.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="stylesheet" href="../../../static/css/layui.css">
+	<link rel="stylesheet" href="../../../static/css/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" href="../../../static/css/robot/TaskSet/inconfont/iconfont.css">
+	<link rel="stylesheet" href="../../../static/css/bootstrap/bootstrap-datetimepicker.css">
+	<link rel="stylesheet" href="../../../static/css/bootstrap-clockpicker/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../static/css/bootstrap-clockpicker/bootstrap-clockpicker.min.css">
+	<link rel="stylesheet" href="../../../static/css/bootstrap-clockpicker/github.min.css">
+	<link rel="stylesheet" href="../../../static/css/robot/TaskSet/timingadd.css">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div id="content-box">
+            <form action="" id="timingaddForm">
+                    <div id="box_table">
+						<div id="box_table-le">
+								<div class="scheme_name">
+										<label class="hint-text">方案名称:</label>
+										<div id="round">
+											<input id="scheme" name="scheme"   type="text" >
+										</div>
+								</div>
+								<div class="robot_name">
+										<label class="hint-text">机器人名称:</label>
+										<div class="">
+											<select id="robot_na" name="robot_na">
+												<option value="" >请选择机器人</option>
+											</select>
+										</div>
+								</div>
+						</div>
+
+						<div id="box_table-ri">
+							<label  class="hint-text">星期:</label>
+								<label class="checkbox-inline ">
+									<input type="checkbox" name="weeks"  value="1">周日
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="weeks" checked value="2">周一
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox"  name="weeks" checked value="3">周二
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="weeks"   value="4">周三
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="weeks"  value="5">周四
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="weeks"  value="6">周五
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" name="weeks"  value="7">周六
+								</label>
+
+								<!--<span>周日</span>-->
+								<!--<input type="checkbox" checked='checked' value="1" name="weeks" id="Weekday">-->
+								<!--<span>周一</span>-->
+								<!--<input type="checkbox" checked='checked' value="2" name="weeks" id="Monday">-->
+								<!--<span>周二</span>-->
+								<!--<input type="checkbox" checked='checked' value="3" name="weeks" id="Tuesday ">-->
+								<!--<span>周三</span>-->
+								<!--<input type="checkbox" checked='checked' value="4" name="weeks" id="Wednesday">-->
+								<!--<span>周四</span>-->
+								<!--<input type="checkbox" checked='checked' value="5" name="weeks" id="Thursday">-->
+								<!--<span>周五</span>-->
+								<!--<input type="checkbox" checked='checked' value="6" name="weeks" id="Friday">-->
+								<!--<span>周六</span>-->
+								<!--<input type="checkbox" checked='checked' value="7" name="weeks" id="Saturday">-->
+							</div>
+                    </div>
+            </form>
+            <div id="box_lrcontent">
+				
+				<div id="con_appear">
+					<!-- left -->
+					<div id="con_al">
+							<div id="con_addbtn">
+									<button type="button" class="btn btn-primary" id="timingdataadd">增加
+									</button>
+								</div>
+						<div id="con_al-details">
+							<ul id="timingullist">
+								<!-- <li class="list-ul-lis">
+									<span class="ti-li-ti">12:00-13:00</span>
+									<span>广告</span>
+								</li>
+								<li class="list-ul-lis">
+									<span class="ti-li-ti">14:00-15:00</span>
+									<span>迎宾</span>
+								</li>
+								<li class="list-ul-lis">
+									<span class="ti-li-ti">16:00-17:00</span>
+									<span>讲解</span>
+								</li> -->
+							</ul>
+						</div>
+						<div id="con_al-btn">
+							<button  type="submit" class="btn btn-primary" id="overallSave"  onclick="save()">保存</button>
+						</div>
+					</div>
+					<!-- right -->
+					<div id="con_ar">
+						<div id="con_ar-conter">
+								<div id="con_ar-conter-top">
+									<span class="title-text">
+										新建
+									</span>
+									<span class="title-icon">
+										<small class="iconfont icon-edit" id="listliedit"></small>
+										<small class="iconfont icon-shanchu" id="listlidel"></small>
+									</span>
+								</div>
+								<!-- 时间 -->
+									<!-- 广告任务、定点解说、迎宾任务 -->
+								<div id="type-time">
+									<div class="task-type_select">
+										<span>任务类型:</span>
+										<select name="" id="selecttype-task">
+											<option value="ad_task">广告任务</option>
+											<option value="ex_task">定点解说</option>
+											<option value="wlcm_task">迎宾任务</option>
+										</select>
+									</div>
+									<div class="task_form-end">
+										<div class="form-time">
+											<!-- <input class="form-control" id="single-input" value="" placeholder="Now"> -->
+											<div class="form-group">
+												<div class="input-group clockpicker start">
+													<input type="text" class="form-control" disabled value="00:00">
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-time"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div style="font-size:30px;margin:0 10px;">-</div>
+										<div class="end-time">
+											<div class="form-group">
+												<div class="input-group clockpicker end">
+													<input type="text" class="form-control" disabled value="00:00">
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-time"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 新建  编辑 -->
+								<div id="con_ar-conter-centre">
+									<div id="con_ar-conter-centre-smallbox">
+										<div id="timing-task_new">
+											<div class="task_new-title">
+												<span>任务列表</span>
+												<span class="twosm">
+													<span class="irandom" id="irandom">
+														<!--<small class="iconfont icon-suiji"></small>-->
+														<i class="fa fa-random"></i>
+														<small>随机播放</small>
+													</span>
+													<span class="i_s">
+														 <small class="iconfont icon-dashujukeshihuaico-"></small>
+														 <small>添加</small>
+													</span>
+												</span>
+											</div>
+										</div>
+										<!-- 新建 编辑 -->
+										<div id="timing-task_details">
+										</div>
+										<div id="okbtn">
+												<button type= "button" class="btn btn-danger" id="danger">取消</button>
+												<button  type="button" class="btn btn-primary" id="confirm">确定</button>
+										</div>
+									</div>
+								</div>
+								<!-- 详情 -->
+								<div id="timing-task-content_show">
+									<div class="show_time-content">
+										<span>时间:</span>
+										<span id="ttable"></span>
+									</div>
+									<div class="show_content-content">
+										<div class="header-title-text">
+											<span class="advertising-list">任务列表</span>
+											<span id="show-random_btn">
+											</span>
+										</div>
+										<div class="show-list_content">
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+            </div>
+		</div>
+		<div id="absolute-list">
+			<div id="absolute-list-content">
+				<div id="span-hide">
+					<span>×</span>
+				</div>
+				<div>
+					<table id="absoluteTable" data-mobile-responsive="true">
+					</table>
+				</div>
+				<div id="absolutebtn">
+					<button type= "button"  id="absolute-cf">取消</button>
+					<button  type="button"  id="absolute-cc">确定</button>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	<script src="../../../static/js/share.js"></script>
+	<script src="../../../static/js/jquery.min.js?v=2.1.4"></script>
+	<script src="../../../static/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table.js"></script>
+	<script src="../../../static/js/jquery.treegrid.js"></script>  
+	<script src="../../../static/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="../../../static/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="../../../static/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../../../static/js/plugins/chosen/chosen.jquery.js"></script>
+	<script src="../../../static/js/plugins/layer/layer.js"></script>
+	<script src="../../../static/js/content.js?v=1.0.0"></script>
+	<!--summernote-->  
+	<script src="../../../static/js/plugins/summernote/summernote.js"></script>
+	<script src="../../../static/js/plugins/summernote/summernote-zh-CN.min.js"></script>
+	<script src="../../../static/js/ajax-util.js"></script>
+	<script src="../../../static/js/jquery.auto-complete.js"></script>
+	<script src="../../../static/js/bootstrap/pagejump/bootstrap-table-pagejump.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-table-treegrid.js"></script>
+	<script src="../../../static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+	<script src="../../../static/js/bootstrap/table/bootstrap-datetimepicker.js"></script>
+	<script src="../../../static/js/bootstrap-clockpicker/bootstrap-clockpicker.js"></script>
+    <script src="../../../static/js/robot/TaskSet/timingadd.js"></script>
+	<script></script>
+</body>
+</html>

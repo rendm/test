@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>用户登录</title>
+    <meta name="keywords" content="BootDo管理系统">
+    <meta name="description" content="BootDo管理系统">
+    <link href="../static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/font-awesome/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../static/css/animate.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/logintext.css">
+    
+    <style> 
+        .layui-layer-shade{
+                background:transparent;
+            }
+    </style>
+</head> 
+<body class="signin2">
+<!-- 用户登录页面 -->
+<div class="signinpanel">
+    <div class="row">
+        <div class="col-md-5">
+            <!--<div th:fragment="test1">-->
+            <form id="signupForm" class="form">
+                <h3 class="text-center" style="color: white">用户登录</h3>
+                <input type="text" name="username" placeholder="手机号/邮箱" class="form-control uname" maxlength="64"/>
+                <input type="password" name="password" placeholder="密码" style="color: white"
+                       class="form-control pword m-b" maxlength="16"/>
+                <div id="imageDiv" style="display: none">
+                    <input type="text" id="imageCode" name="imageCode" class="form-control" value=""
+                           placeholder="请输入验证码"
+                           style="background: rgba(255,255,255,.2);width: 120px;display: inline-block;margin: auto;color:#ffffff"
+                           maxlength="5"/>
+                    <div tabindex = "0" id="v_container" style="width: 170px;height: 34px;display:block;float: right;margin: auto;">
+                    </div>
+                </div>
+                <div>
+                    <a id="login" href="#" class="btn btn-login btn-block">登录</a>
+                </div>
+                <br>
+                <div>
+                    <a id="register" href="#"
+                       style="display:block;float: left;margin-left: 180px;">免费注册</a>
+                    <a id="forgetPwd" href="#"
+                       style="display:block;float: right;">忘记密码</a>
+                </div>
+                <br>
+                <div class="subnav-banner">
+                    <span style="white-space:pre;"> </span><span class="line"></span>
+                    <span style="white-space:pre;"> </span><span class="txt">其他登录</span>
+                    <span style="white-space:pre;"> </span><span class="line"></span>
+                </div>
+                <div class="outside-login-cot">
+                    <a href="#"> <img src="../static/img/qq.jpg" style="margin-left:80px;"></a>
+                    <a href="#"> <img src="../static/img/wechat.jpg" style=" margin-left:30px;"></a>
+                    <a href="#"> <img src="../static/img/zfb.jpg" style="margin-left:30px;"></a>
+                </div>
+            </form>
+            <!--</div>-->
+            <!--<div class="signup-footer">-->
+            <!--<div class="pull-left">&copy; 2017 All Rights Reserved. BootDo-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<script th:inline="javascript"></script> 
+<!-- 全局js -->
+<script src="../static/js/jquery.min.js?v=2.1.4" ></script> 
+<script src="../static/js/bootstrap.min.js?v=3.3.6" ></script>
+<!-- 自定义js -->
+<script src="../static/js/content.js?v=1.0.0" ></script>
+<!-- jQuery Validation plugin javascript-->
+<script src="../static/js/ajax-util.js"></script>  
+<script src="../static/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="../static/js/plugins/validate/messages_zh.min.js" ></script>
+<script src="../static/js/plugins/layer/layer.min.js" ></script>
+<script src="../static/js/appjs/common/image.js" ></script>
+<script src="../static/js/share.js"></script>
+<script src="../static/js/logintest.js"></script>
+</body>
+</html>
